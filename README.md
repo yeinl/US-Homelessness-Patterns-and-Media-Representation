@@ -119,15 +119,3 @@ This project highlights:
 
 By integrating numerical and media analyses, this study provides a holistic view of homelessness patterns and media representation in the U.S., aiming to drive **effective policies and public awareness**.
 
----
-
-## **Getting Started**
-
-### **Prerequisites**
-- Python 3.8+
-- Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `openai`
-
-### **Installation**
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/US-Homelessness-Patterns-Media-Representation.git
