@@ -1,6 +1,6 @@
 # US Homelessness Patterns & Media Representation
 
-## 🌟 **Understanding and Addressing U.S. Homelessness Through Data Science**  
+## 🌟 Understanding and Addressing U.S. Homelessness Through Data Science  
 *A Comprehensive Analysis of Trends (2015-2022) and Media Representation Across Political Spectrums*
 
 ---
@@ -38,7 +38,7 @@ Homelessness in the U.S. is a persistent and multifaceted challenge that demands
 
 ## **2. Objectives**
 
-### **Goals**
+### Goals
 - **Numerical Analysis**:
   - Identify key factors influencing homelessness trends through advanced statistical modeling.
   - Discover correlations and patterns using clustering and association mining.
@@ -46,7 +46,7 @@ Homelessness in the U.S. is a persistent and multifaceted challenge that demands
   - Investigate how media sentiment differs by political spectrum.
   - Identify recurring themes using topic modeling (e.g., LDA).
 
-### **Expected Impact**
+### Expected Impact
 - Foster actionable recommendations for **public policy** and **advocacy organizations**.
 - Address media biases to provide a clearer picture of the homelessness crisis.
 
@@ -74,14 +74,14 @@ Association Rule Mining identifies relationships between variables in large data
 
 ## **4. Data Overview**
 
-### **Homelessness Data**
+### Homelessness Data
 - **Source**: U.S. Department of Housing and Urban Development (HUD).
 - **Features**:
   - Demographics (age, gender, race).
   - Annual counts (sheltered vs. unsheltered).
   - Geographical trends.
 
-### **Media Data**
+### Media Data
 - **Sources**: Headlines from:
   - *The New York Times* (Left).
   - *The Wall Street Journal* (Center).
@@ -94,7 +94,7 @@ Association Rule Mining identifies relationships between variables in large data
 
 ## **5. Methodology**
 
-### **Numerical Analysis**
+### Numerical Analysis
 1. **Preprocessing**:
    - Normalization, handling missing data, log transformations.
 2. **Trend Analysis**:
@@ -109,7 +109,7 @@ Association Rule Mining identifies relationships between variables in large data
    - **Algorithms**: Random Forest, Gradient Boosting.
    - **Why Chosen**: High accuracy and feature interpretability.
 
-### **Media Sentiment Analysis**
+### Media Sentiment Analysis
 1. **Sentiment Scoring**:
    - **Tool**: BERT-based sentiment analysis.
    - **Output**: Emotional tone (positive/negative/neutral).
@@ -121,13 +121,13 @@ Association Rule Mining identifies relationships between variables in large data
 
 ## **6. Results and Findings**
 
-### **Numerical Insights**
+### Numerical Insights
 - **Demographic Trends**:
   - Rising unsheltered homelessness among adults, males, and minorities.
 - **Key Clusters**:
   - Grouped by age, race, and type of homelessness (e.g., sheltered vs. unsheltered).
 
-### **Media Insights**
+### Media Insights
 - Right-leaning media showed the strongest correlation with rising homelessness counts.
 - Left-leaning media balanced negative and positive sentiments.
 
