@@ -16,11 +16,11 @@
 5. [Methodology](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#5-methodology)
     - [Numerical Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#numerical-analysis)
     - [Media Sentiment Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#media-sentiment-analysis)
-6. [Results and Findings](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#6-results-and-findings)
+6. [Key Findings](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#6-key-findings)
 7. [Visualizations](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#7-visualizations)
-8. [Conclusion](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#8-conclusion)
-9. [Future Work](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#9-future-work)
-10. [Technical Walkthrough](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#10-technical-walkthrough)
+8. [Technical Walkthrough](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#8-technical-walkthrough)
+9. [Conclusion](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#9-conclusion)
+10. [Future Work](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#10-future-work)
 11. [Repository Structure](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#11-repository-structure)
 12. [References](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#12-references)
 
@@ -28,144 +28,189 @@
 
 ## **1. Problem Statement**
 
-Homelessness in the U.S. is a persistent and multifaceted challenge that demands innovative approaches. This project investigates:
-- **Trends and patterns** in homelessness across demographic groups from 2015 to 2022.
-- How media narratives align with or distort these trends based on political leanings.
+Homelessness is a complex societal issue, reflecting the socio-economic, racial, and policy frameworks of our communities. This project aims to:
+- Explore **patterns and trends in U.S. homelessness** from 2015 to 2022.
+- Analyze **media narratives** about homelessness across political leanings.
+- Identify **data-driven policy insights** to inform advocacy and intervention strategies.
 
-**Significance**: By marrying statistical insights with media analyses, this research aims to drive **data-informed policymaking**, **enhance advocacy efforts**, and improve **public understanding**.
+> Homelessness affects over **half a million Americans nightly**, with **72% as individuals** and **28% as families with children** (*HUD 2022 Annual Report*). However, media portrayal often shapes public perception and policy priorities in divergent ways.
 
 ---
 
 ## **2. Objectives**
 
-### Goals
-- **Numerical Analysis**:
-  - Identify key factors influencing homelessness trends through advanced statistical modeling.
-  - Discover correlations and patterns using clustering and association mining.
-- **Media Sentiment Analysis**:
-  - Investigate how media sentiment differs by political spectrum.
-  - Identify recurring themes using topic modeling (e.g., LDA).
+### 🔎 **Key Goals**
+1. **Numerical Analysis:**
+   - Investigate demographic and geographical homelessness patterns.
+   - Employ clustering, association mining, and predictive modeling to uncover insights.
+2. **Media Sentiment Analysis:**
+   - Compare sentiments and themes from left, right, and center-aligned news outlets.
+   - Identify media biases in homelessness narratives.
 
-### Expected Impact
-- Foster actionable recommendations for **public policy** and **advocacy organizations**.
-- Address media biases to provide a clearer picture of the homelessness crisis.
+### 🌍 **Social Impact**
+- **Policy Insight:** Generate actionable recommendations for public policies aimed at reducing homelessness.
+- **Advocacy Support:** Empower advocacy groups with data-backed insights.
+- **Media Literacy:** Highlight media biases to foster a more informed public discourse.
 
 ---
 
 ## **3. Key Concepts**
 
-### What is Sentiment Analysis?
-Sentiment Analysis uses **Natural Language Processing (NLP)** to extract and classify the emotional tone (positive, negative, neutral) of textual data, such as news headlines.  
-**Why it’s relevant**: It helps quantify how media represents homelessness narratives.  
-🔗 *Learn more about [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)*  
+### **What is Sentiment Analysis?**
+Sentiment analysis uses **Natural Language Processing (NLP)** to evaluate the emotional tone in text data. It assigns sentiment categories (e.g., positive, neutral, negative) to phrases or entire texts.
 
-### Why Clustering Matters
-Clustering groups data points with similar characteristics, enabling identification of patterns.  
-**Example**: Grouping homeless individuals by demographics (age, gender, race).  
-🔗 *Learn more about [Clustering in Machine Learning](https://towardsdatascience.com/clustering)*
+- **Why Relevant?** Understanding media sentiment sheds light on how public perceptions of homelessness are influenced.
+- **Methodology Overview:**
+  1. Tokenization: Splitting text into words.
+  2. Sentiment Scoring: Assigning scores using models like **BERT**.
+  3. Aggregation: Summarizing sentiments for yearly trends.
 
-### Understanding Association Pattern Mining
-Association Rule Mining identifies relationships between variables in large datasets.  
-**Algorithm Used**: **FP Growth**  
-**Example**: "Type - Sheltered → Race - White" appears in frequent patterns.  
-🔗 *Learn more about [FP Growth Algorithm](https://en.wikipedia.org/wiki/Association_rule_learning)*  
+**Formula** for Sentiment Scoring:
+\[
+\text{Sentiment Score} = \sum_{i=1}^{n} \text{Polarity(word}_i)
+\]
+
+---
+
+### **Why Clustering Matters**
+Clustering is a machine learning technique that groups data points with similar characteristics.
+
+- **Example Application:**
+   - Grouping homelessness records by **age**, **race**, and **geography**.
+   - Identifying areas with similar homelessness trends.
+
+**Algorithms Explored:**
+1. **K-Means:** Efficient for large datasets but assumes spherical clusters.
+2. **Hierarchical Clustering:** Builds a dendrogram but struggles with large datasets.
+
+**Key Equation (K-Means):**
+\[
+J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i^{(k)} - \mu_k ||^2
+\]
+*where \(x_i\) represents data points and \(\mu_k\) the centroid.*
+
+---
+
+### **Association Pattern Mining**
+This technique identifies frequent patterns in data to infer relationships.  
+
+**Algorithm Used:** **FP-Growth**  
+- **Why Chosen:** Scales better than **Apriori** for large datasets.  
+- **Key Insight Example:** "Sheltered → Race - White" is a frequent association.
+
+---
+
+### **Understanding Gradient Boosting**
+Gradient Boosting is a supervised learning algorithm that builds models sequentially. Each model corrects errors made by the previous one.
+
+- **Why Used Here:** Effective for handling imbalanced datasets and uncovering key predictors.
+- **Comparison with Random Forest:** Gradient Boosting often outperforms Random Forest in small, high-dimensional datasets but is computationally expensive.
 
 ---
 
 ## **4. Data Overview**
 
-### Homelessness Data
-- **Source**: U.S. Department of Housing and Urban Development (HUD).
-- **Features**:
+### **Numerical Data**
+- **Source:** HUD Point-in-Time (PIT) counts (2015–2022).
+- **Features:**
   - Demographics (age, gender, race).
-  - Annual counts (sheltered vs. unsheltered).
-  - Geographical trends.
+  - Homelessness type (sheltered vs. unsheltered).
 
-### Media Data
-- **Sources**: Headlines from:
-  - *The New York Times* (Left).
-  - *The Wall Street Journal* (Center).
-  - *The Washington Examiner* (Right).
-- **Content**:
-  - Over 10,000 articles (2015–2022).
-  - Sentiment analysis and topic modeling outputs.
+### **Media Data**
+- **Source:** News headlines from:
+  - *The New York Times* (Left-leaning).
+  - *The Wall Street Journal* (Centrist).
+  - *The Washington Examiner* (Right-leaning).
+- **Total Records:** Over 10,000 headlines spanning 7 years.
 
 ---
 
 ## **5. Methodology**
 
-### Numerical Analysis
-1. **Preprocessing**:
-   - Normalization, handling missing data, log transformations.
-2. **Trend Analysis**:
-   - Visualizations by year and demographics.
-3. **Clustering**:
-   - **Algorithm**: K-Means.
-   - **Why Chosen**: Handles large datasets efficiently and identifies natural groupings.
-4. **Association Mining**:
-   - **Algorithm**: FP Growth.
-   - **Why Chosen**: Faster than Apriori for large datasets.
-5. **Classification**:
-   - **Algorithms**: Random Forest, Gradient Boosting.
-   - **Why Chosen**: High accuracy and feature interpretability.
-
-### Media Sentiment Analysis
-1. **Sentiment Scoring**:
-   - **Tool**: BERT-based sentiment analysis.
-   - **Output**: Emotional tone (positive/negative/neutral).
-2. **Topic Modeling**:
-   - **Algorithm**: Latent Dirichlet Allocation (LDA).
-   - **Purpose**: Extract recurring themes in media headlines.
+### **Numerical Analysis**
+1. **Data Preprocessing:**
+   - Imputation for missing data.
+   - Log transformation to normalize skewed distributions.
+2. **Exploratory Data Analysis:**
+   - Analyzed trends by demographics and geography.
+   - Heatmaps for correlation analysis.
+3. **Clustering Analysis:**
+   - Identified natural groupings in the data (e.g., demographic clusters).
+4. **Classification Models:**
+   - Random Forest and Gradient Boosting used to predict high/low homelessness.
 
 ---
 
-## **6. Results and Findings**
-
-### Numerical Insights
-- **Demographic Trends**:
-  - Rising unsheltered homelessness among adults, males, and minorities.
-- **Key Clusters**:
-  - Grouped by age, race, and type of homelessness (e.g., sheltered vs. unsheltered).
-
-### Media Insights
-- Right-leaning media showed the strongest correlation with rising homelessness counts.
-- Left-leaning media balanced negative and positive sentiments.
+### **Media Sentiment Analysis**
+1. **Web Scraping:**
+   - Extracted news headlines using keywords like “homelessness.”
+   - Random sampling to ensure balanced representation.
+2. **Sentiment Analysis:**
+   - BERT-based model to classify sentiments into positive, neutral, and negative.
+3. **Topic Modeling:**
+   - Applied **Latent Dirichlet Allocation (LDA)** to uncover recurring themes.
 
 ---
 
-## **7. Visualizations**
+## **6. Key Findings**
 
-### Sample Visualization: Clustering Output
-![Clustering](https://example.com/cluster_visualization.png)  
-**Description**: Clusters identified by age and homelessness type.
+### **Numerical Insights**
+1. **Demographic Trends:**
+   - Higher homelessness rates among males and adults.
+   - Disproportionate impact on **Native Hawaiians**, **Black**, and **American Indian** populations after normalization.
+2. **Geographical Trends:**
+   - California and New York report the highest homelessness counts.
 
----
-
-## **8. Conclusion**
-
-This project highlights the interconnectedness of data-driven homelessness insights and media narratives. Policymakers must consider both to develop effective strategies.
-
----
-
-## **9. Future Work**
-1. **Include Social Media Analysis** (e.g., Twitter sentiment).
-2. **Interactive Dashboards** for public engagement.
+### **Media Insights**
+1. **Sentiment Trends:**
+   - Right-leaning outlets (*Washington Examiner*) align most closely with homelessness trends, displaying increased negativity during rises in homeless counts.
+2. **Topic Modeling:**
+   - Common themes include "shelters," "policy debates," and "crisis response."
 
 ---
 
-## **10. Technical Walkthrough**
+## **8. Technical Walkthrough**
 
 ### Example Python Code
+#### **Random Forest Classifier**
 ```python
-# Random Forest Classifier for Homelessness Prediction
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+# Training the model
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
-# Frequent Pattern Growth for Association Rule Mining
-from mlxtend.frequent_patterns import fpgrowth
-frequent_patterns = fpgrowth(data, min_support=0.01)
+# Evaluation
+predictions = model.predict(X_test)
+print(classification_report(y_test, predictions))
 ```
+
+#### **Sentiment Analysis with BERT
+```python
+from transformers import pipeline
+
+# Load sentiment analysis pipeline
+classifier = pipeline("sentiment-analysis")
+sentiments = classifier(["Homelessness is rising nationwide.", 
+                         "New shelter policies are proving effective."])
+print(sentiments)
+```
+
+---
+
+## **9. Conclusion**
+This study provides a holistic view of homelessness patterns and media portrayals. The insights inform policymakers and advocates, emphasizing the need for unbiased narratives and targeted policies.
+
+---
+
+## **10. Future Work**
+1. Expand analysis to include social media platforms like Twitter.
+2. Develop interactive dashboards to communicate findings to non-technical audiences.
+
+
+
+
 
 ---
 
@@ -183,7 +228,10 @@ README.md
 ---
 
 ## **12. References**
-HUD: Annual Homeless Assessment Reports
-FP Growth Algorithm: Wikipedia
-Sentiment Analysis: Hugging Face BERT
+1. HUD: Annual Homeless Assessment Reports
+2. FP Growth Algorithm: Wikipedia
+3. Sentiment Analysis: Hugging Face BERT
+4. Gradient Boosting Explained: Towards Data Science.
+
+
 
