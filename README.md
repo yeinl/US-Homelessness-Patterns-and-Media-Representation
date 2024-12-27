@@ -57,54 +57,122 @@ Homelessness is a complex societal issue, reflecting the socio-economic, racial,
 ## **3. Key Concepts**
 
 ### **What is Sentiment Analysis?**
-Sentiment analysis uses **Natural Language Processing (NLP)** to evaluate the emotional tone in text data. It assigns sentiment categories (e.g., positive, neutral, negative) to phrases or entire texts.
+Sentiment Analysis is a Natural Language Processing (NLP) technique that identifies and categorizes emotions expressed in text. At its core, it determines whether the sentiment of a given piece of text is **positive**, **negative**, or **neutral**. Advanced models like **BERT (Bidirectional Encoder Representations from Transformers)** have made sentiment analysis far more accurate by capturing the nuances of human language, such as sarcasm, context, and tone.
 
-- **Why Relevant?** Understanding media sentiment sheds light on how public perceptions of homelessness are influenced.
-- **Methodology Overview:**
-  1. Tokenization: Splitting text into words.
-  2. Sentiment Scoring: Assigning scores using models like **BERT**.
-  3. Aggregation: Summarizing sentiments for yearly trends.
+- **How it works:**
+  1. **Preprocessing:** Text is cleaned by removing stop words, punctuation, and special characters.
+  2. **Tokenization:** The text is broken into smaller units, such as words or phrases, for processing.
+  3. **Sentiment Scoring:** Algorithms assign polarity scores to tokens or entire sentences, indicating their sentiment.
 
-**Formula** for Sentiment Scoring:
+**Mathematical Foundation:**
+Sentiment analysis often employs a polarity function \( P \):
 \[
-\text{Sentiment Score} = \sum_{i=1}^{n} \text{Polarity(word}_i)
+P = \frac{\text{Positive Words Count} - \text{Negative Words Count}}{\text{Total Words Count}}
 \]
+This yields a normalized score between -1 and 1.
+
+- **In this Project:**
+   Sentiment analysis was applied to over 10,000 headlines from politically diverse media outlets (*The New York Times*, *The Wall Street Journal*, *The Washington Examiner*). We used **BERT-based models** for their superior performance in understanding nuanced headlines. By mapping sentiment scores to homelessness trends, we revealed disparities between actual data and media portrayal.
 
 ---
 
 ### **Why Clustering Matters**
-Clustering is a machine learning technique that groups data points with similar characteristics.
+Clustering is a machine learning method that groups data points with similar characteristics. In the context of homelessness, clustering helps identify demographic patterns, revealing insights about which groups are most affected and why.
 
-- **Example Application:**
-   - Grouping homelessness records by **age**, **race**, and **geography**.
-   - Identifying areas with similar homelessness trends.
+- **Key Clustering Algorithms:**
+  1. **K-Means Clustering:** Partitions data into \( K \) clusters by minimizing within-cluster variance.
+      \[
+      J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i - \mu_k ||^2
+      \]
+      Here, \( x_i \) represents a data point, and \( \mu_k \) is the centroid of the \( k \)-th cluster.
 
-**Algorithms Explored:**
-1. **K-Means:** Efficient for large datasets but assumes spherical clusters.
-2. **Hierarchical Clustering:** Builds a dendrogram but struggles with large datasets.
+  2. **Hierarchical Clustering:** Builds a tree (dendrogram) to represent nested groupings.
 
-**Key Equation (K-Means):**
-\[
-J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i^{(k)} - \mu_k ||^2
-\]
-*where \(x_i\) represents data points and \(\mu_k\) the centroid.*
+  3. **DBSCAN (Density-Based Spatial Clustering):** Groups points based on density, useful for identifying outliers.
+
+- **Why it’s important:**
+   For homelessness data, clustering helps us discover:
+   - Groups disproportionately affected by homelessness (e.g., age-race combinations).
+   - Geographical areas with similar trends (e.g., California and New York often cluster due to high homelessness rates).
+
+- **In this Project:**
+   We applied **K-Means** to demographic data, identifying four distinct clusters:
+   - Young individuals disproportionately represented among White and African American groups.
+   - Adults, especially females, clustering within specific racial demographics.
+   - Diverse groups with mixed patterns.
+   - Small or non-represented demographic clusters.
 
 ---
 
 ### **Association Pattern Mining**
-This technique identifies frequent patterns in data to infer relationships.  
+Association Pattern Mining discovers relationships between variables in datasets. For example, in a retail setting, it’s used to find that "People who buy bread often buy butter." In this project, it uncovers which demographics and homelessness types frequently co-occur.
 
-**Algorithm Used:** **FP-Growth**  
-- **Why Chosen:** Scales better than **Apriori** for large datasets.  
-- **Key Insight Example:** "Sheltered → Race - White" is a frequent association.
+- **FP-Growth Algorithm:**
+   Unlike traditional Apriori algorithms, FP-Growth is faster and avoids generating redundant candidate sets. It builds a **frequent pattern tree (FP-tree)** to store compressed data representations.
+
+   **Steps in FP-Growth:**
+   1. Construct the FP-tree from the dataset.
+   2. Generate frequent patterns by traversing the FP-tree.
+
+**Mathematical Context:**
+Association rules are defined as:
+\[
+\text{Confidence}(X \rightarrow Y) = \frac{\text{Support}(X \cup Y)}{\text{Support}(X)}
+\]
+Where:
+- \( X \): Antecedent
+- \( Y \): Consequent
+- Support: Proportion of transactions containing the itemset.
+
+- **Why it matters:**
+   In homelessness data, association rules reveal:
+   - "Sheltered → Race: White" as a common pattern.
+   - Strong associations between age and type of homelessness, such as "Under 18 → Sheltered."
+
+- **In this Project:**
+   FP-Growth identified **10 key demographic patterns**, such as the correlation between youth homelessness and race. These insights inform targeted interventions, such as increasing shelter access for specific racial groups.
 
 ---
 
 ### **Understanding Gradient Boosting**
-Gradient Boosting is a supervised learning algorithm that builds models sequentially. Each model corrects errors made by the previous one.
+Gradient Boosting is a supervised machine learning technique that builds models sequentially. Each new model corrects the errors of the previous one. It’s highly effective for structured data and excels at capturing complex relationships.
 
-- **Why Used Here:** Effective for handling imbalanced datasets and uncovering key predictors.
-- **Comparison with Random Forest:** Gradient Boosting often outperforms Random Forest in small, high-dimensional datasets but is computationally expensive.
+- **How it works:**
+   Gradient Boosting minimizes a loss function by iteratively adding weak learners (e.g., decision trees):
+   \[
+   F_m(x) = F_{m-1}(x) + \eta \cdot h_m(x)
+   \]
+   Here:
+   - \( F_m(x) \): Current model.
+   - \( F_{m-1}(x) \): Previous model.
+   - \( h_m(x) \): New learner.
+   - \( \eta \): Learning rate.
+
+- **Advantages:**
+   - High accuracy.
+   - Handles imbalanced datasets well (common in homelessness studies).
+
+- **Comparison with Random Forest:**
+   - **Random Forest:** Builds many independent trees and averages their results.
+   - **Gradient Boosting:** Builds trees sequentially, optimizing each based on the previous ones.
+
+- **In this Project:**
+   Gradient Boosting was used to predict high homelessness counts. Key predictors included:
+   1. **Gender (Male)**.
+   2. **Age (Over 18)**.
+   The model achieved **99% accuracy**, though cross-validation was employed to check for overfitting.
+
+---
+
+### How These Concepts Work Together
+These techniques—sentiment analysis, clustering, association mining, and predictive modeling—form an interconnected framework:
+1. **Sentiment Analysis** reveals the media’s portrayal of homelessness.
+2. **Clustering** identifies demographic patterns to contextualize numerical insights.
+3. **Association Pattern Mining** bridges gaps by uncovering frequently co-occurring factors.
+4. **Gradient Boosting** confirms the importance of key features, enabling policy recommendations.
+
+This multi-layered approach ensures robust analysis, combining data-driven insights with narrative understanding to inform actionable policies for homelessness intervention.
+
 
 ---
 
@@ -128,27 +196,131 @@ Gradient Boosting is a supervised learning algorithm that builds models sequenti
 ## **5. Methodology**
 
 ### **Numerical Analysis**
-1. **Data Preprocessing:**
-   - Imputation for missing data.
-   - Log transformation to normalize skewed distributions.
-2. **Exploratory Data Analysis:**
-   - Analyzed trends by demographics and geography.
-   - Heatmaps for correlation analysis.
-3. **Clustering Analysis:**
-   - Identified natural groupings in the data (e.g., demographic clusters).
-4. **Classification Models:**
-   - Random Forest and Gradient Boosting used to predict high/low homelessness.
+
+Numerical analysis forms the backbone of this project, enabling us to extract meaningful patterns from homelessness data spanning multiple years and demographics.
+
+#### 1. **Data Preprocessing**
+Data preprocessing ensures the dataset is clean, consistent, and ready for analysis. In this project, we implemented the following:
+- **Imputation of Missing Data:**
+  - Missing demographic and count values were imputed using mean or median strategies depending on the variable distribution.
+  - Example: For demographic categories, missing data was filled proportionally based on similar states or regions.
+- **Log Transformation:**
+  - Skewed distributions were normalized using the log transformation:
+    \[
+    x' = \log(x + 1)
+    \]
+    This transformation helped stabilize variance and made relationships between variables clearer.
+
+#### 2. **Exploratory Data Analysis (EDA)**
+EDA allowed us to identify patterns, trends, and anomalies in the data:
+- **Trend Analysis:**
+  - Visualizations showed the rise in unsheltered homelessness and its disproportionate impact on adults and males.
+- **Heatmaps:**
+  - Correlation analysis revealed strong relationships (e.g., sheltered homelessness correlates with younger demographics).
+  - High correlations like \( \text{Age: Under 18} \leftrightarrow \text{Race: White} \) guided further clustering and modeling efforts.
+
+#### 3. **Clustering Analysis**
+Clustering was crucial in identifying natural groupings among demographics. We used **K-Means Clustering** for its simplicity and interpretability:
+- **Optimal Number of Clusters:**
+  - Determined using the Elbow Method, where the inertia curve's inflection point suggested 4 clusters.
+- **Insights:**
+  - Cluster 1: Predominantly young individuals under 18, highly represented among White and African American groups.
+  - Cluster 2: Adults over 18, including a significant proportion of males and females.
+  - Cluster 3: Diverse groups with mixed racial representation.
+  - Cluster 4: Minimal demographic representation, indicating under-sampled or less-affected populations.
+
+#### 4. **Classification Models**
+To predict high or low homelessness levels, we implemented two machine learning models:
+- **Random Forest:**
+  - An ensemble learning technique that combines multiple decision trees.
+  - Features were ranked by importance using Gini impurity reduction:
+    \[
+    G = 1 - \sum_{i=1}^{n} p_i^2
+    \]
+    where \( p_i \) is the proportion of samples classified into class \( i \).
+- **Gradient Boosting:**
+  - Built sequential models to minimize the loss function:
+    \[
+    F_m(x) = F_{m-1}(x) + \eta \cdot h_m(x)
+    \]
+    Here, \( h_m(x) \) represents the weak learner added at iteration \( m \).
+
+- **Why These Models Were Chosen:**
+  - Random Forest: Robust to overfitting, handles missing values well.
+  - Gradient Boosting: Captures complex, non-linear relationships in the data.
+
+- **Results:**
+  - Both models achieved high accuracy (99%), but cross-validation ensured reliability and minimized overfitting.
 
 ---
 
 ### **Media Sentiment Analysis**
-1. **Web Scraping:**
-   - Extracted news headlines using keywords like “homelessness.”
-   - Random sampling to ensure balanced representation.
-2. **Sentiment Analysis:**
-   - BERT-based model to classify sentiments into positive, neutral, and negative.
-3. **Topic Modeling:**
-   - Applied **Latent Dirichlet Allocation (LDA)** to uncover recurring themes.
+
+To complement the numerical analysis, media sentiment analysis revealed how homelessness is portrayed across political spectra.
+
+#### 1. **Web Scraping**
+We used automated tools to extract over 10,000 headlines related to homelessness:
+- **Process:**
+  - Targeted three media outlets (*The New York Times*, *The Wall Street Journal*, *The Washington Examiner*), chosen for their distinct political leanings.
+  - Keywords like "homelessness," "shelters," and "crisis" guided the scraping process.
+  - To avoid bias, random sampling was employed, ensuring 100 headlines per year per outlet.
+
+#### 2. **Sentiment Analysis**
+**BERT (Bidirectional Encoder Representations from Transformers)** was used to classify the sentiment of each headline:
+- **How BERT Works:**
+  - Encodes input text into context-aware embeddings.
+  - Applies classification layers to predict sentiments as positive, neutral, or negative.
+
+**Key Formula for Sentiment Scoring:**
+\[
+\text{Sentiment Score} = \frac{\text{Positive Count} - \text{Negative Count}}{\text{Total Count}}
+\]
+This normalized score helped quantify sentiment trends across years and outlets.
+
+- **Insights:**
+  - Right-leaning media (*The Washington Examiner*) exhibited stronger negative sentiments during homelessness spikes.
+  - Left-leaning media (*The New York Times*) maintained a balance between critical and optimistic tones.
+
+#### 3. **Topic Modeling**
+To uncover recurring themes in headlines, we applied **Latent Dirichlet Allocation (LDA)**:
+- **How LDA Works:**
+  - Models each document as a mixture of topics.
+  - Topics are distributions over words.
+- **Example Topics Identified:**
+  - "Policy and Funding": Frequently discussed in *The New York Times*.
+  - "Crime and Safety": Prominent in *The Washington Examiner*.
+  - "Economic Impacts": Central in *The Wall Street Journal*.
+
+**Mathematical Representation of LDA:**
+\[
+P(w) = \sum_{z} P(w|z) P(z|d)
+\]
+Where:
+- \( P(w) \): Probability of a word \( w \) in a document \( d \).
+- \( P(z|d) \): Probability of topic \( z \) given the document \( d \).
+- \( P(w|z) \): Probability of word \( w \) given the topic \( z \).
+
+- **Insights:**
+  - Thematic focus varied significantly by political leaning:
+    - Left: Policy and funding solutions.
+    - Center: Economic analyses.
+    - Right: Crime and safety concerns.
+
+#### 4. **Comparative Sentiment Trends**
+By normalizing sentiment scores and correlating them with homelessness data, we identified:
+- Strong alignment between rising homelessness and increased negative sentiment in right-leaning outlets.
+- Moderated responses in center and left-leaning outlets, reflecting editorial stances.
+
+---
+
+### How These Methods Work Together
+This methodology integrates diverse techniques, ensuring comprehensive insights:
+1. **Numerical Analysis:** Reveals the "what" and "why" of homelessness trends.
+2. **Media Analysis:** Explores the "how" behind public perception and narratives.
+3. **Correlation Studies:** Links statistical data with societal narratives, highlighting media's role in shaping discourse.
+
+Together, these approaches bridge numerical realities with media portrayals, providing a holistic view of homelessness patterns in the U.S.
+
 
 ---
 
