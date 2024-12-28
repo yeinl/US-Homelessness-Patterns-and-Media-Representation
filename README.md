@@ -81,10 +81,11 @@ Clustering is central to understanding the **heterogeneity of homelessness**. It
 #### **Methods Explored:**
 1. **K-Means Clustering:**
    - Partitions the dataset into \( K \) clusters by minimizing the within-cluster sum of squared distances (WCSS):
-   \[
-   J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i - \mu_k ||^2
-   \]
+   $$ 
+   J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i - \mu_k ||^2 
+   $$
    - **Optimization:** Determining \( K \) through the Elbow Method, where the WCSS curve flattens.
+
 
 2. **Hierarchical Clustering:**
    - Constructs a dendrogram to represent nested relationships, enabling a better understanding of data hierarchy.
