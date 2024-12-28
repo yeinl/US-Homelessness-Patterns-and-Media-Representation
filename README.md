@@ -26,7 +26,6 @@
 
 ---
 
----
 
 ## **1. Introduction**
 
@@ -66,9 +65,9 @@ Sentiment analysis, powered by **NLP models like BERT**, deciphers emotions in t
    - A fine-tuned BERT model is used to predict sentiments based on embeddings.
 
 3. **Sentiment Scoring Formula:**
-   \[
+   ```math
    P = \frac{\text{Positive Words Count} - \text{Negative Words Count}}{\text{Total Words Count}}
-   \]
+      ```
 
 4. **Advanced Features:**
    - **Handling Sarcasm and Contextual Nuances:** The bidirectional transformer architecture enables BERT to understand sarcasm or subtle positive/negative tones better than older bag-of-words models.
