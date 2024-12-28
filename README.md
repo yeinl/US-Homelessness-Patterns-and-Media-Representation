@@ -161,9 +161,9 @@ Gradient Boosting optimizes predictions by sequentially minimizing errors from p
 1. **Data Preprocessing:** 
    - Addressed missing values with **regional imputation**.
    - Normalized data using **log transformation**:
-     \[
+   ```math
      x' = \log(x + 1)
-     \]
+   ```
 
 2. **Clustering:** 
    - Optimal clusters identified via **Elbow Method**.
