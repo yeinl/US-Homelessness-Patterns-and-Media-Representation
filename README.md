@@ -81,9 +81,10 @@ Clustering is central to understanding the **heterogeneity of homelessness**. It
 #### **Methods Explored:**
 1. **K-Means Clustering:**
    - Partitions the dataset into \( K \) clusters by minimizing the within-cluster sum of squared distances (WCSS):
-     \[
-     J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i - \mu_k ||^2
-     \]
+
+   ```math
+   J(c, \mu) = \sum_{i=1}^{n} \sum_{k=1}^{K} || x_i - \mu_k ||^2
+   ```
    - **Optimization:** Determining \( K \) through the Elbow Method, where the WCSS curve flattens.
 
 
@@ -111,9 +112,10 @@ Association rule mining identifies frequently co-occurring patterns within data.
 2. **Metrics:**
    - **Support:** Frequency of a pattern in the dataset.
    - **Confidence:** Likelihood of a consequent given an antecedent:
-   \[
+
+   ```math
    \text{Confidence}(X \rightarrow Y) = \frac{\text{Support}(X \cup Y)}{\text{Support}(X)}
-   \]
+      ```
    - **Lift:** Measures rule strength relative to random chance.
 
 #### **Applications:**
@@ -127,9 +129,10 @@ Gradient Boosting optimizes predictions by sequentially minimizing errors from p
 #### **Technical Insights:**
 1. **Loss Minimization:**
    - Adds weak learners \( h_m(x) \) iteratively to reduce residual errors:
-   \[
+
+   ```math
    F_m(x) = F_{m-1}(x) + \eta \cdot h_m(x)
-   \]
+   ```
    - \( \eta \): Learning rate for controlling step size.
 
 2. **Handling Imbalanced Data:**
