@@ -210,7 +210,8 @@ $$
 
 </div>
 
-Where \( f_i(x) \) is the prediction from the \( i \)-th tree.
+Where f_i(x) is the prediction from the i-th tree.
+
 
 
 ### Gradient Boosting
@@ -224,7 +225,7 @@ $$
 
 </div>
 
-Where \( h_m(x) \) represents the corrective model.
+Where h_m(x) represents the corrective model.
 
 
 ### Insights Gained
@@ -248,8 +249,8 @@ $$
 </div>
 
 Where:
-- \( P(w | z) \): Probability of word \( w \) given topic \( z \),
-- \( P(z | d) \): Probability of topic \( z \) given document \( d \).
+- P(w | z): Probability of word w given topic z,
+- P(z | d): Probability of topic z given document d.
 
 
 ### Why It’s Insightful
@@ -262,9 +263,8 @@ By applying LDA, we uncovered themes like "pandemic-related impacts" and "policy
 ## 6.1 Section 1: Numerical Analysis
 
 ### 6.1.1 Data Acquisition - Homeless Count Data
-The dataset utilized in this research project was acquired from the U.S. Department of Housing and Urban Development (HUD). The dataset comprises Point-In-Time (PIT) counts collected by Continuums of Care (CoCs) from 2007 to 2022. 
+The dataset utilized in this research project was acquired from the U.S. Department of Housing and Urban Development (HUD). The dataset comprises Point-In-Time (PIT) counts collected by Continuums of Care (CoCs) from 2007 to 2022. “PIT counts are unduplicated one-night estimates of homeless populations, encompassing both sheltered and unsheltered individuals. These counts are conducted annually nationwide during the final week of January. CoCs represent local planning bodies responsible for coordinating a comprehensive range of homelessness services within specific geographic areas, which can encompass cities, counties, metropolitan areas, or entire states”[3]. 
 
-> *"PIT counts are unduplicated one-night estimates of homeless populations, encompassing both sheltered and unsheltered individuals. These counts are conducted annually nationwide during the final week of January. CoCs represent local planning bodies responsible for coordinating a comprehensive range of homelessness services within specific geographic areas, which can encompass cities, counties, metropolitan areas, or entire states"* [3].
 
 ---
 
@@ -272,38 +272,47 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 #### (a) Trend
 1. **Trend of Overall Count**
+   <img width="284" alt="image" src="https://github.com/user-attachments/assets/9aa1de93-3a11-4ec9-8d65-7120543ffe32" />
    - The count of homelessness has not significantly reduced over the years.
    - A dip in 2021 is observed due to data collection issues post-pandemic.
 2. **Trend Categorized by Age**
+   <img width="284" alt="image" src="https://github.com/user-attachments/assets/b16f6241-e818-4d62-badd-fcab7dab6eb4" />
    - More homeless adults than children (under 18).
 3. **Trend Categorized by Gender**
+   <img width="284" alt="image" src="https://github.com/user-attachments/assets/94cb6b22-29dc-4e51-a922-083f6de5f4b4" />
    - There are more homeless males than females.
    - The count for other genders is very low compared to males and females.
 4. **Trend Categorized by Race**
    - **Before Normalizing:**
-     - White and Black populations are most affected.
-     - The White population shows higher absolute counts due to their larger share of the total population (76%).
-     - Black populations face disproportionately high counts, driven by factors such as systemic racism, unfair incarceration, and drug addiction.
+     <img width="284" alt="image" src="https://github.com/user-attachments/assets/d614e09b-1a46-4483-934c-26abca67e29a" />
    - **After Normalizing:**
+     <img width="284" alt="image" src="https://github.com/user-attachments/assets/3ef6a678-acdf-44b1-b3e1-69132d7988e2" />
      - Native Hawaiian and Other Pacific Islanders, Black, American Indian, and Alaskan Native populations are most affected.
      - The normalized data reveals that the White population is less impacted in comparison.
      - Patterns persist across all years.
 5. **Trend Categorized by Type of Homelessness (Sheltered vs. Unsheltered)**
+   <img width="284" alt="image" src="https://github.com/user-attachments/assets/532c6321-b363-496f-87db-596f57d1e9db" />
    - Sheltered counts are decreasing, while unsheltered counts are increasing, indicating a worsening issue.
 
 #### (b) Distribution of Data for Each Year (2015-2022)
 - Distribution assessed using histograms and boxplots after applying log transformation.
-- Log transformation normalized the data distribution, as shown in Appendix A and B.
+- Log transformation normalized the data distribution. Below are some examples:
+   ![image](https://github.com/user-attachments/assets/2ddded21-fc35-4bfc-a7c3-e22dcf6168c8)
+   ![image](https://github.com/user-attachments/assets/f4125c23-354a-440f-a7ac-0a1abaf899ee)
+
 
 #### (c) Variability Across Years
+<img width="286" alt="image" src="https://github.com/user-attachments/assets/d5dc73d7-5b33-4f26-ab5d-f6f4e7e7260e" />
 - Side-by-side boxplots reveal consistent variability in homeless counts across years.
 - Homelessness has not shown significant improvement since 2015.
 
 #### (d) Visualization by State
 1. **Trends by State (Across Years):**
-   - California and New York consistently show worse homelessness counts compared to other states.
+   <img width="335" alt="image" src="https://github.com/user-attachments/assets/f8493b34-9330-4150-a65b-b1a5937650f0" />
+   -  California and New York consistently show worse homelessness counts compared to other states.
    - Likely causes include high cost of living, violence, and drug abuse.
 2. **2022 Homeless Counts (US Map):**
+   <img width="365" alt="image" src="https://github.com/user-attachments/assets/14350a74-3df9-49dd-b802-c9b4e9e3e78b" />
    - California and New York demonstrate significantly higher homelessness counts in 2022.
 
 ---
@@ -311,6 +320,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 ### 6.1.3 Numerical Analysis
 
 #### (a) Part 1: Correlation Matrix
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/fa559c69-df7b-4414-9807-90a580bce08e" />
 - Strong positive correlations (≥ 0.9) observed between the following variables:
   1. Under 18 and African American
   2. Under 18 and Female
@@ -321,7 +331,10 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 - Further analysis conducted using clustering and association pattern mining.
 
 #### (b) Part 2: Clustering
-- **Dendrogram** and **Elbow Method** used to determine optimal clusters.
+<img width="311" alt="image" src="https://github.com/user-attachments/assets/39241395-a134-451e-bb10-38b0f4e0c947" />
+<img width="311" alt="image" src="https://github.com/user-attachments/assets/39cc24c1-e3a2-41d4-8333-d7aef7066193" />
+-  **Dendrogram** and **Elbow Method** used to determine optimal clusters.
+<img width="364" alt="image" src="https://github.com/user-attachments/assets/7054db5f-35f4-4bfe-84d8-8cb65e3f3ed3" />
 - Four clusters identified:
   1. **Cluster 2:**
      - Highest mean values for Under 18, Male, White, and Black populations.
@@ -367,43 +380,37 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 ---
 
 ### (e) Conclusion
-- **Key Findings:**
-  - Homelessness has not significantly decreased over the years, with disparities among racial groups after normalization.
-  - Clustering identified distinct demographic patterns, emphasizing homelessness among younger and minority groups.
-  - Random Forest and Gradient Boosting models highlight significant demographic predictors of high homelessness.
-- **Implications:**
-  - The study underscores the need for targeted interventions and policy reforms addressing homelessness’s complex demographic factors.
+In summary, the comprehensive analysis of homelessness data reveals several critical insights. The trend analysis indicates that the overall homelessness count has not significantly decreased over the years, with a noticeable dip in 2021 attributed to data collection challenges post-pandemic. Demographic trends highlight a higher prevalence of homelessness among adults, males, and specific racial groups. However, upon normalization, it becomes apparent that Native Hawaiin and Other Pacific Islanders, Black, American Indian, and Alaskan Native populations are disproportionately affected. The clustering analysis unveils distinct demographic clusters, emphasizing the prevalence of homelessness among young individuals, particularly White and African American populations. Association pattern mining identifies strong associations, such as "Sheltered" correlating with "Race - White" and "Age - Under 18." Classification models, specifically Random Forest and Gradient Boosting, showcase exceptionally high performance metrics, prompting further investigation through cross-validation. Notably, the models identify "Gender - Male" and "Age - Over 18" as key factors influencing high levels of homelessness. Overall, this multifaceted analysis enhances our understanding of homelessness patterns, emphasizing the need for targeted interventions and policy considerations to address the complex interplay of demographic factors contributing to homelessness across the United States.
+
 
 
 # Section 2. Media Analysis
 
 ## (a) Part 1-3: Preparing Dataset
-- **Data Collection:**  
-  - Web-scraped news headlines (2016–2022) from three media outlets with distinct political leanings:
-    - *The New York Times* (Left-leaning)
-    - *The Wall Street Journal* (Centrist)
-    - *The Washington Examiner* (Right-leaning)
-  - Randomly selected 100 headlines from each outlet per year, resulting in a dataset of 2,100 headlines.
+Parts 1 and 2 involve the process of collecting media headlines. We web-scraped news headlines from 2016 to 2022 from three media outlets, each with a distinct political leaning: The New York Times (left-leaning), The Wall Street Journal (centrist), and The Washington Examiner (right-leaning). We then randomly selected 100 headlines from each outlet for each year within this range, resulting in a total of 2,100 headlines.
 
-- **Analysis Methods:**  
-  - Sentiment Analysis using BERT.  
-  - Topic Modeling using LDA.  
-  - Word Frequency Analysis.  
+In Part 3, we conducted sentiment analysis using BERT, topic modeling with LDA, and word frequency analysis to examine the narratives presented.
 
-- **Data Storage:**  
-  - Organized all collected data into structured text files for further analysis.
+All the collected data was then organized and stored in structured text files.
+
 
 ---
 
 ## (b) Part 4: Analyze and Visualize Sentiment Analysis Data
 
+First, we’ve done sentiment analysis.
+
+
+
 ### **Sentiment Analysis Interpretation**
 - **General Trends:**
+  <img width="395" alt="image" src="https://github.com/user-attachments/assets/726ca781-a1de-4c05-b9cc-8f28854fee38" />
   - *Very Negative* sentiments dominate across all years.
   - *Neutral* sentiments remain stable, with a slight increase in 2021.
   - *Positive* and *Very Positive* sentiments fluctuate, reflecting policy shifts or public perception changes.
 
 - **Media-Specific Insights:**
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/179ad621-6d3b-4293-b9d4-8957251ed15a" />
   - *The New York Times* (Left):  
     - Higher proportion of *Very Negative* sentiment.
     - Slightly higher *Very Positive* sentiment compared to other outlets, indicating a mix of optimism and criticism.  
@@ -415,14 +422,26 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 ---
 
 ### **Word Frequency Analysis**
+Now, we’ve done word frequency analysis.
+<img width="403" alt="image" src="https://github.com/user-attachments/assets/137cccb2-7709-43b3-a953-721c48cd9f79" />
+
 - **Key Observations:**
   - Terms like *shelters*, *school*, and *crisis* indicate societal discussions on homelessness.  
   - Mentions of *California*, *Trump*, and *policy* suggest political and regional focuses.  
   - Terms related to the COVID-19 pandemic emerge in 2020, highlighting its impact on homelessness.
 
+These plots will be valuable when we later analyze sentiment in conjunction with homeless count data, providing detailed and deeper insights into possible factors of certain observations.
+
+
 ---
 
 ### **Topic Analysis**
+
+Now, we’ve done topic analysis. Below are some examples:
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/1a035413-8c3e-4e3a-9b50-0694dacd2fef" />
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/d8553230-be6e-4c79-889a-bb71e2c68e48" />
+
+**Key Observations are:**
 
 #### *The New York Times* (Left)
 - **2016–2022:**  
@@ -439,14 +458,18 @@ The dataset utilized in this research project was acquired from the U.S. Departm
   - Politically charged coverage, emphasizing crime, housing policies, and societal issues.
   - Strong focus on immediate concerns and governance.
 
-### **Narrative Comparisons Across Outlets**
-- *The New York Times:* Policy-oriented with broader societal implications.  
-- *The Wall Street Journal:* Analytical with emphasis on economic and social balance.  
-- *The Washington Examiner:* Reactive and focused on immediate societal impacts.
+### **Different Narratives Across Media outlets:**
+The New York Times maintains a policy-centric lens, often integrating broader societal implications with specific policy discussions. In contrast, The Wall Street Journal presents a more economically and politically analytical viewpoint, merging financial implications with social policies. The Washington Examiner's coverage is notably more politically charged, frequently framing homelessness within current political debates and immediate societal impacts.
+
+Topic analysis has uncovered dynamic discussions concerning homelessness, mirroring contemporary events, political dynamics, and societal shifts. Similar to word frequency analysis, this approach will offer further insights into our forthcoming examination of homeless population data, allowing us to gain a more comprehensive and nuanced understanding of potential determinants underlying specific observations.
+
+
 
 ---
 
 ## (c) Part 5: Annual Total Homeless Counts (2015–2022)
+<img width="366" alt="image" src="https://github.com/user-attachments/assets/eed6f5cb-362f-4236-8db6-13f9c6c9efe0" />
+<img width="391" alt="image" src="https://github.com/user-attachments/assets/edc41e9c-b5e6-4ee9-ab1b-e3f3fe5d2875" />
 
 - **2021 Data Adjustment:**  
   - Used the average of 2020 and 2022 data due to anomalies caused by COVID-19.  
@@ -456,16 +479,30 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ## (d) Part 6: Comparative Analysis of Media Sentiment
 
+<img width="375" alt="image" src="https://github.com/user-attachments/assets/2575dfa2-8da3-4b9d-80bd-ae8dc356ac6d" />
+<img width="386" alt="image" src="https://github.com/user-attachments/assets/2717e128-fe79-42a2-b0e3-ff29dd0eb043" />
+<img width="369" alt="image" src="https://github.com/user-attachments/assets/ecdd0ce9-e01d-4bd8-821e-b815fd5eac77" />
+<img width="369" alt="image" src="https://github.com/user-attachments/assets/25278353-57a3-4a16-99f2-3b19b63e0d22" />
+<img width="369" alt="image" src="https://github.com/user-attachments/assets/6377f051-9273-4577-a343-ed004deaa90f" />
+
+
 ### **Key Observations:**
-- Normalized *Overall Negative* and *Overall Positive* sentiments for comparative analysis.  
-- *The Washington Examiner* most responsive to homeless count changes:
-  - Strong correlation between rising counts and increased negative sentiment.  
-- *The New York Times* and *The Wall Street Journal*:  
-  - Less pronounced shifts, maintaining a balanced tone.  
+- This comparative analysis of media sentiment underscores distinct patterns in how media outlets respond to homelessness trends, influenced by their political leanings.
+- The Washington Examiner (Right) displays the most pronounced response, with a marked increase in negative sentiment correlating strongly with rising homeless counts. This suggests a narrative intensely reactive to changes in societal issues.
+- In contrast, The New York Times (Left) adopts a more measured approach, with a less pronounced but still noticeable increase in negative sentiment during periods of heightened homelessness.
+- The Wall Street Journal (Center) strives for a balanced narrative, maintaining relative stability in sentiment despite fluctuations in homelessness.
+- Overall, our findings reveal that while each outlet reflects changes in homelessness, the extent and nature of their response are distinctly shaped by their political orientations.
+We have completed the initial stages of our analysis, encompassing all media outlets as a collective unit. In the first three steps, we engaged in scraping and examining news headlines spanning several years. Subsequent steps, four through six, involved conducting a sentiment analysis and creating visualizations to represent these findings over multiple years.
+
+The next phase of our project will enhance our ability to visually discern how media sentiment, this time with a focus on more detailed sentiments.
 
 ---
 
 ## (e) Part 7: Detailed Sentiment Analysis by Media Outlet
+For this part, we’ve assigned categories to the media outlets based on their political leanings. And, we’ve calculated sentiment scores, for visualizations using heatmaps. Below are some examples:
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/f4c562cf-1f23-4eb1-ab6a-da1a975c6e12" />
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/e3838ea1-7521-43e5-8cba-85f017bd5fb1" />
+
 
 ### **Heatmap Insights:**
 - *The Washington Examiner:*  
@@ -479,51 +516,87 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ## (f) Part 8: Correlation Analysis Between Homelessness Data and Sentiment
 
-### **Correlation Insights:**
-- *The Washington Examiner:*  
-  - Strong positive correlation between *Overall Negative* sentiment and homeless counts (+0.876).  
-  - Strong negative correlation between *Overall Positive* sentiment and homeless counts (-0.639).  
-- *The Wall Street Journal:*  
-  - Moderate correlations across sentiment categories, maintaining balance.  
-- *The New York Times:*  
-  - Moderate correlation for neutral sentiments; weak trends for positive and negative sentiments.
+Before proceeding with correlation analysis, it's important to check for normality, linearity, homoscedasticity, and independence. Let's check statistical assumptions.
+
+- Homeless Count Normality: Statistics=0.880, p=0.187
+- Overall Negative Sentiment Normality: Statistics=0.917, p=0.077
+- Neutral Sentiment Normality: Statistics=0.937, p=0.186
+- Overall Positive Sentiment Normality: Statistics=0.917, p=0.074
+
+The output from our Shapiro-Wilk test for normality indicates that the data for homeless counts and the sentiments (Overall Negative, Neutral, and Overall Positive) do not significantly deviate from a normal distribution. Therefore, we can proceed with statistical methods that assume normal distribution now.
+
+For the next assumption, independence. Since the data points represent different years and the data collection process was independent from year to year, then this assumption should be satisfied.
+
+And here, we've checked the linearity and homoscedasticity using scatter plots. Below are some examples: 
+
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/1ac9b0ca-f6b9-42d9-8ee7-9276a72dbd7b" />
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/352ff310-a496-4918-9d66-5412eb7012b9" />
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/4ee24316-755d-4e36-87f1-383ff96bfadb" />
+
+
+Visual inspection of scatter plots suggests that while perfect linearity and homoscedasticity are not evident, the data does not exhibit strong non-linearity or clear patterns of heteroscedasticity.
+Given these findings, we proceeded with Pearson’s correlation analysis, recognizing that while the assumptions are not strictly satisfied, the observed deviations appear to be minor and not excessively influential on the overall trends.
+However, we should note that these factors introduce a degree of uncertainty into the correlation estimates. Further studies, potentially involving larger datasets and robust statistical techniques, would be beneficial to confirm the observed relationships.
+
+Now, let's start on calculating correlation coefficients to explore the strength and direction of the relationship between media sentiment and homeless counts.
+
+
+Correlation between Homeless Counts and Sentiments:
+
+<img width="404" alt="image" src="https://github.com/user-attachments/assets/27043d3c-1f6e-49b5-a7de-c652d7b9bd53" />
+
+
+This analysis suggests that The Washington Examiner's coverage aligns more closely with actual changes in homeless counts, particularly by increasing negative sentiment as homeless counts rise. Conversely, The Wall Street Journal and The New York Times tend to display a decrease in positive sentiment as homeless numbers increase, though the strength of this relationship varies. However, to fully grasp the narratives presented by different media outlets, it is crucial to consider these correlations within the broader context of political climates, significant events, policy changes, and public opinion. We will talk more about this in the next (last) part, 'Media Sentiment- Comprehensive Conclusion'.
+
+
 
 ---
 
 ## (g) Media Sentiment Analysis - Comprehensive Conclusion
 
+Our extensive analysis of media sentiment toward homelessness, through the multifaceted lenses of sentiment analysis, correlation with homeless counts, word frequency, and topic modeling, reveals a complex tapestry of media narratives deeply influenced by political orientations and societal contexts.
+
+
 ### **Synthesis of Findings:**
-- *The Washington Examiner:*  
+- *The Washington Examiner (Right):*  
   - Most responsive to homelessness changes, amplifying societal concerns.  
-- *The New York Times:*  
+- *The New York Times (Left):*  
   - Critical, yet contextualized within broader societal and policy frameworks.  
-- *The Wall Street Journal:*  
+- *The Wall Street Journal (Center):*  
   - Maintains consistency with balanced reporting.
 
-### **Integration of Insights:**
-- Reveals the interplay of sentiment, topical focus, and word choice in framing homelessness.  
-- Highlights the role of political orientation in shaping media narratives.
+
+
+### **Correlation with Homeless Counts:**
+- Each outlet's sentiment towards homelessness exhibited varying degrees of correlation with actual homeless counts. The Washington Examiner's (Right) coverage most closely mirrored changes in homelessness, with a marked increase in negative sentiment corresponding with rising homeless counts. This suggests a narrative deeply responsive to the severity of the homelessness crisis. Conversely, The Wall Street Journal (Center) and The New York Times (Left) displayed a more moderated response, with a focus on maintaining a balanced or cautiously optimistic narrative, despite the fluctuations in homelessness figures.
+
+### **Word Frequency and Topic Modeling Insights:**
+- The topical focus and language used by the different outlets revealed their unique editorial angles and perspectives on homelessness. We observed a range of themes, from policy and political discussions in The New York Times (Left) to societal and infrastructural considerations in The Wall Street Journal (Center), and a more politically charged narrative from The Washington Examiner (Right).
+- The prevalence of specific terms like "shelters," "policy," and "crisis" across the outlets indicates a shared recognition of the systemic nature of homelessness, yet the emphasis varied, reflecting each outlet's editorial focus and ideological stance.
+
+### **Integrating the Insights:**
+- This multi-dimensional analysis illuminates how media outlets not only report on homelessness but also frame the issue through their distinct ideological lenses. The interplay of sentiment, topical focus, and word choice creates narratives that both reflect and shape public understanding and discourse around homelessness.
+- The Washington Examiner (Right) emerges as the most responsive to the changing realities of homelessness, with a narrative that amplifies societal concerns. The New York Times (Left), while critical, incorporates a diverse range of topics, possibly aiming to contextualize homelessness within broader societal and policy frameworks. The Wall Street Journal (Center) balances these approaches, maintaining a consistent narrative tone while navigating the complexities of the issue.
+
+### **Final Thoughts:**
+- This comprehensive analysis underscores the pivotal role media outlets play in shaping societal perceptions of complex issues like homelessness. By understanding the nuances in their narratives, we can better appreciate the multifaceted nature of homelessness and the diverse viewpoints that contribute to the public discourse. This insight is invaluable not only for media consumers seeking a more rounded understanding of homelessness but also for policymakers, advocates, and researchers who navigate these narratives to influence policy and public opinion.
+ 
 
 ---
 
 # 6.3. Comparison of Results from Numerical and Media Analysis
+- The consistent negative sentiment in media titles aligns with the numerical analysis, reflecting a parallel increase in negativity and homeless counts from 2018 to 2020.
+- Word frequency and topic modeling confirm California's severe homelessness situation, correlating with numerical findings of the highest homeless count in the state.
+- During the 2018-2020 rise in homeless counts, media sentiments turned more negative, especially in NYT and WSJ, mirroring the moderation in the rate of homeless count increase from 2020 to 2022.
+- Right-wing media, notably The Washington Examiner, closely aligns with changes in homeless counts, displaying increased negative sentiment with rising counts. In contrast, The Wall Street Journal and The New York Times exhibit nuanced responses, with fluctuations in positive sentiment, underscoring the importance of considering broader contextual factors.
 
-- Media negativity mirrors numerical increases in homelessness (2018–2020).  
-- Media coverage of California aligns with numerical findings of high homeless counts.  
-- *The Washington Examiner* aligns most closely with homeless count changes.  
+
 
 ---
 
 # 7. Conclusion of Analysis
+In conclusion, our multifaceted analysis of homelessness, integrating numerical insights and media narratives, provides a comprehensive understanding of this complex societal issue. The numerical analysis exposes persistent challenges, emphasizing demographic disparities, particularly among Native Hawaiin and Other Pacific Islanders, Black, American Indian, and Alaskan Native populations. The media analysis accentuates the influential role of media in shaping public perceptions of homelessness, adding layers of context to the numerical findings. Crucially, the alignment between negative media sentiments and numerical trends underscores the interconnected nature of public discourse and statistical realities. The spotlight on California's severe homelessness situation, mirrored in both analyses, emphasizes the urgency for targeted interventions. The nuanced responses of media outlets, particularly the right-wing's alignment with homeless count changes, highlight the necessity of contextual considerations. This synthesis of numerical and media analyses not only deepens our comprehension of homelessness patterns but also underscores the importance of a holistic approach, merging quantitative insights with media narratives, to inform effective policies and public discourse surrounding homelessness in the United States.
 
-### **Key Takeaways:**
-- Numerical analysis reveals persistent demographic disparities in homelessness.
-- Media narratives add contextual layers, reflecting and shaping public discourse.
-- Alignment of negative sentiment and numerical trends highlights interconnected realities.
-
-### **Policy Implications:**
-- Emphasize targeted interventions informed by integrated data and narrative analysis.  
-- Address demographic disparities and regional challenges, particularly in California.  
 
 ---
 
@@ -532,20 +605,10 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 2. A. Rahmattalabi, *Towards Trustworthy and Data-Driven Social Interventions*. Ph.D. dissertation, Dept. Computer Science, University of Southern California, 2022. [Online]. Available: [Harvard Projects](https://projects.iq.harvard.edu/files/teamcore/files/thesis_aidarahmattalabi.pdf)  
 3. U.S. Department of Housing and Urban Development, *The 2022 Annual Homeless Assessment Report to Congress - Part 1: Point-in-Time Estimates of Homelessness*. [Online]. Available: [HUD User](https://www.huduser.gov/portal/sites/default/files/pdf/2022-ahar-part-1.pdf)  
 
----
-
-# 9. Appendix 
-(Note: paste images here)
-- **Appendix A:** Distribution Analysis Plots  
-- **Appendix B:** Variability Analysis Plots  
-- **Appendix C:** Word Frequency and Topic Analysis Plots  
-- **Appendix D:** Heatmap Analysis Plots  
-- **Appendix E:** Correlation Scatter Plots  
-
 
 ---
 
-## **10. References**
+## **9. References**
 1. HUD: Annual Homeless Assessment Reports
 2. FP Growth Algorithm: Wikipedia
 3. Sentiment Analysis: Hugging Face BERT
