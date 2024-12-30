@@ -318,6 +318,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 -  **Dendrogram** and **Elbow Method** used to determine optimal clusters.
    <br> 
    <img width="364" alt="image" src="https://github.com/user-attachments/assets/7054db5f-35f4-4bfe-84d8-8cb65e3f3ed3" />
+   <br> 
 - Four clusters identified:
   1. **Cluster 2:**
      - Highest mean values for Under 18, Male, White, and Black populations.
