@@ -1,13 +1,6 @@
 
 <div style="display: flex; flex-direction: column; align-items: center;">
 
-<style>
-  img {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-</style>
-
 
 
 # US Homelessness Patterns & Media Representation
@@ -68,6 +61,7 @@ In our endeavor to comprehensively analyze the patterns of homelessness and thei
 ### 4.1 Section 1: Numerical Analysis  
 - **Step 1: Data Preprocessing** – Prepare data for analysis.
   ![image](https://github.com/user-attachments/assets/99e2a911-19ff-44e2-84ce-299b6d779961)
+  <br> 
 - **Step 2: Correlation Analysis** – Identify variable relationships using heatmaps.  
 - **Step 3: Clustering** – Group demographics to uncover behavioral patterns.  
 - **Step 4: Association Rule Mining** – Discover demographic associations with FP Growth.  
@@ -245,25 +239,31 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 #### (a) Trend
 1. **Trend of Overall Count**
+   <br>
    <img width="284" alt="image" src="https://github.com/user-attachments/assets/9aa1de93-3a11-4ec9-8d65-7120543ffe32" />
    - The count of homelessness has not significantly reduced over the years.
    - A dip in 2021 is observed due to data collection issues post-pandemic.
 2. **Trend Categorized by Age**
+   <br>
    <img width="284" alt="image" src="https://github.com/user-attachments/assets/b16f6241-e818-4d62-badd-fcab7dab6eb4" />
    - More homeless adults than children (under 18).
 3. **Trend Categorized by Gender**
+   <br>
    <img width="284" alt="image" src="https://github.com/user-attachments/assets/94cb6b22-29dc-4e51-a922-083f6de5f4b4" />
    - There are more homeless males than females.
    - The count for other genders is very low compared to males and females.
 4. **Trend Categorized by Race**
    - **Before Normalizing:**
+     <br> 
      <img width="284" alt="image" src="https://github.com/user-attachments/assets/d614e09b-1a46-4483-934c-26abca67e29a" />
    - **After Normalizing:**
+     <br> 
      <img width="284" alt="image" src="https://github.com/user-attachments/assets/3ef6a678-acdf-44b1-b3e1-69132d7988e2" />
      - Native Hawaiian and Other Pacific Islanders, Black, American Indian, and Alaskan Native populations are most affected.
      - The normalized data reveals that the White population is less impacted in comparison.
      - Patterns persist across all years.
 5. **Trend Categorized by Type of Homelessness (Sheltered vs. Unsheltered)**
+   <br>
    <img width="284" alt="image" src="https://github.com/user-attachments/assets/532c6321-b363-496f-87db-596f57d1e9db" />
    - Sheltered counts are decreasing, while unsheltered counts are increasing, indicating a worsening issue.
 
@@ -275,16 +275,19 @@ The dataset utilized in this research project was acquired from the U.S. Departm
   
 
 #### (c) Variability Across Years
+<br> 
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/d5dc73d7-5b33-4f26-ab5d-f6f4e7e7260e" />
 - Side-by-side boxplots reveal consistent variability in homeless counts across years.
 - Homelessness has not shown significant improvement since 2015.
 
 #### (d) Visualization by State
 1. **Trends by State (Across Years):**
+   <br>
    <img width="335" alt="image" src="https://github.com/user-attachments/assets/f8493b34-9330-4150-a65b-b1a5937650f0" />
    -  California and New York consistently show worse homelessness counts compared to other states.
    - Likely causes include high cost of living, violence, and drug abuse.
-2. **2022 Homeless Counts (US Map):**
+3. **2022 Homeless Counts (US Map):**
+   <br>
    <img width="365" alt="image" src="https://github.com/user-attachments/assets/14350a74-3df9-49dd-b802-c9b4e9e3e78b" />
    - California and New York demonstrate significantly higher homelessness counts in 2022.
 
@@ -293,6 +296,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 ### 6.1.3 Numerical Analysis
 
 #### (a) Part 1: Correlation Matrix
+<br> 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/fa559c69-df7b-4414-9807-90a580bce08e" />
 - Strong positive correlations (≥ 0.9) observed between the following variables:
   1. Under 18 and African American
@@ -304,10 +308,14 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 - Further analysis conducted using clustering and association pattern mining.
 
 #### (b) Part 2: Clustering
+<br> 
 <img width="311" alt="image" src="https://github.com/user-attachments/assets/39241395-a134-451e-bb10-38b0f4e0c947" />
+<br> 
 <img width="311" alt="image" src="https://github.com/user-attachments/assets/39cc24c1-e3a2-41d4-8333-d7aef7066193" />
+<br> 
 -  **Dendrogram** and **Elbow Method** used to determine optimal clusters.
-<img width="364" alt="image" src="https://github.com/user-attachments/assets/7054db5f-35f4-4bfe-84d8-8cb65e3f3ed3" />
+   <br> 
+   <img width="364" alt="image" src="https://github.com/user-attachments/assets/7054db5f-35f4-4bfe-84d8-8cb65e3f3ed3" />
 - Four clusters identified:
   1. **Cluster 2:**
      - Highest mean values for Under 18, Male, White, and Black populations.
@@ -377,12 +385,14 @@ First, we’ve done sentiment analysis.
 
 ### **Sentiment Analysis Interpretation**
 - **General Trends:**
+  <br>
   <img width="395" alt="image" src="https://github.com/user-attachments/assets/726ca781-a1de-4c05-b9cc-8f28854fee38" />
   - *Very Negative* sentiments dominate across all years.
   - *Neutral* sentiments remain stable, with a slight increase in 2021.
   - *Positive* and *Very Positive* sentiments fluctuate, reflecting policy shifts or public perception changes.
 
 - **Media-Specific Insights:**
+  <br>
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/179ad621-6d3b-4293-b9d4-8957251ed15a" />
   - *The New York Times* (Left):  
     - Higher proportion of *Very Negative* sentiment.
@@ -396,6 +406,7 @@ First, we’ve done sentiment analysis.
 
 ### **Word Frequency Analysis**
 Now, we’ve done word frequency analysis.
+<br> 
 <img width="403" alt="image" src="https://github.com/user-attachments/assets/137cccb2-7709-43b3-a953-721c48cd9f79" />
 
 - **Key Observations:**
@@ -411,8 +422,11 @@ These plots will be valuable when we later analyze sentiment in conjunction with
 ### **Topic Analysis**
 
 Now, we’ve done topic analysis. Below are some examples:
+<br> 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/1a035413-8c3e-4e3a-9b50-0694dacd2fef" />
+<br> 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/d8553230-be6e-4c79-889a-bb71e2c68e48" />
+<br> 
 
 **Key Observations are:**
 
@@ -441,8 +455,11 @@ Topic analysis has uncovered dynamic discussions concerning homelessness, mirror
 ---
 
 ## (c) Part 5: Annual Total Homeless Counts (2015–2022)
+<br> 
 <img width="366" alt="image" src="https://github.com/user-attachments/assets/eed6f5cb-362f-4236-8db6-13f9c6c9efe0" />
+<br> 
 <img width="391" alt="image" src="https://github.com/user-attachments/assets/edc41e9c-b5e6-4ee9-ab1b-e3f3fe5d2875" />
+<br> 
 
 - **2021 Data Adjustment:**  
   - Used the average of 2020 and 2022 data due to anomalies caused by COVID-19.  
@@ -451,13 +468,17 @@ Topic analysis has uncovered dynamic discussions concerning homelessness, mirror
 ---
 
 ## (d) Part 6: Comparative Analysis of Media Sentiment
-
+<br> 
 <img width="375" alt="image" src="https://github.com/user-attachments/assets/2575dfa2-8da3-4b9d-80bd-ae8dc356ac6d" />
+<br> 
 <img width="386" alt="image" src="https://github.com/user-attachments/assets/2717e128-fe79-42a2-b0e3-ff29dd0eb043" />
+<br> 
 <img width="369" alt="image" src="https://github.com/user-attachments/assets/ecdd0ce9-e01d-4bd8-821e-b815fd5eac77" />
+<br> 
 <img width="369" alt="image" src="https://github.com/user-attachments/assets/25278353-57a3-4a16-99f2-3b19b63e0d22" />
+<br> 
 <img width="369" alt="image" src="https://github.com/user-attachments/assets/6377f051-9273-4577-a343-ed004deaa90f" />
-
+<br> 
 
 ### **Key Observations:**
 - This comparative analysis of media sentiment underscores distinct patterns in how media outlets respond to homelessness trends, influenced by their political leanings.
@@ -473,7 +494,9 @@ The next phase of our project will enhance our ability to visually discern how m
 
 ## (e) Part 7: Detailed Sentiment Analysis by Media Outlet
 For this part, we’ve assigned categories to the media outlets based on their political leanings. And, we’ve calculated sentiment scores, for visualizations using heatmaps. Below are some examples:
+<br> 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/f4c562cf-1f23-4eb1-ab6a-da1a975c6e12" />
+<br> 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/e3838ea1-7521-43e5-8cba-85f017bd5fb1" />
 
 
@@ -502,8 +525,11 @@ For the next assumption, independence. Since the data points represent different
 
 And here, we've checked the linearity and homoscedasticity using scatter plots. Below are some examples: 
 
+<br>
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/1ac9b0ca-f6b9-42d9-8ee7-9276a72dbd7b" />
+<br> 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/352ff310-a496-4918-9d66-5412eb7012b9" />
+<br> 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/4ee24316-755d-4e36-87f1-383ff96bfadb" />
 
 
@@ -515,7 +541,7 @@ Now, let's start on calculating correlation coefficients to explore the strength
 
 
 Correlation between Homeless Counts and Sentiments:
-
+<br> 
 <img width="404" alt="image" src="https://github.com/user-attachments/assets/27043d3c-1f6e-49b5-a7de-c652d7b9bd53" />
 
 
