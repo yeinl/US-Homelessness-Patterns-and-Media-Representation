@@ -52,27 +52,29 @@ In essence, "Bridging Realities" is not merely a research endeavor. It seeks to 
 ---
 
 ## 2. Problem Statement  
-We aim to investigate changing patterns related to homelessness from 2015 to 2022 by conducting a thorough numerical analysis of homeless counts across diverse demographics such as age, gender, race, and state. Utilizing clustering, association pattern mining, and classification models (Random Forest, Gradient Boosting), we seek to identify underlying patterns and factors significantly influencing homelessness. Additionally, our study involves a text analysis of news titles related to homelessness from left-wing, neutral, and right-wing media categories. Employing sentiment analysis (BERT), word frequency, and topic modeling (LDA), we aim to assess media portrayals of homelessness across political wings. Furthermore, we seek to assess the alignment between Internet news portrayals by state and the actual circumstances of homelessness.![image](https://github.com/user-attachments/assets/a9cf8e3d-9fd8-4aa7-bb50-9caf5212e23e)
+We aim to investigate changing patterns related to homelessness from 2015 to 2022 by conducting a thorough numerical analysis of homeless counts across diverse demographics such as age, gender, race, and state. Utilizing clustering, association pattern mining, and classification models (Random Forest, Gradient Boosting), we seek to identify underlying patterns and factors significantly influencing homelessness. Additionally, our study involves a text analysis of news titles related to homelessness from left-wing, neutral, and right-wing media categories. Employing sentiment analysis (BERT), word frequency, and topic modeling (LDA), we aim to assess media portrayals of homelessness across political wings. Furthermore, we seek to assess the alignment between Internet news portrayals by state and the actual circumstances of homelessness.
 
 
 ---
 
 ## 3. Related Work  
-In recent research, machine learning and artificial intelligence have been harnessed to model complex systems, particularly within the context of homelessness. One study employs these technologies to predict returns to homelessness, examining numerous possible allocations of households to homeless services and generating reentry predictions for each combination of household and service [1]. Additionally, it explores mathematical and theoretical optimization possibilities for the allocation process and investigates how predictions can enhance the understanding of homeless service efficacy, focusing on the case of St. Louis, MO, USA.
+In recent research, machine learning and artificial intelligence have been harnessed to model complex systems, particularly within the context of homelessness. One study employs these technologies to predict returns to homelessness, examining numerous possible allocations of households to homeless services and generating reentry predictions for each combination of household and service. Additionally, it explores mathematical and theoretical optimization possibilities for the allocation process and investigates how predictions can enhance the understanding of homeless service efficacy, focusing on the case of St. Louis, MO, USA [1]. Another study contributes to addressing various critical social issues, including homelessness, through the development of data-driven algorithmic solutions. Specifically, it seeks to mitigate homelessness by devising equitable policies and data-driven strategies to connect individuals with appropriate resources, ensuring a higher likelihood of a safe and stable exit from homelessness [2]. 
 
-Another study contributes to addressing various critical social issues, including homelessness, through the development of data-driven algorithmic solutions. Specifically, it seeks to mitigate homelessness by devising equitable policies and data-driven strategies to connect individuals with appropriate resources, ensuring a higher likelihood of a safe and stable exit from homelessness [2].
+Our study has been split into two parts. We first perform numerical analysis of data that consists of counts of homeless people across different demographics like age, gender, race, state, etc. We employ various algorithms like clustering, association pattern mining and employing classification models like Random Forest and Gradient Boosting to understand underlying patterns in the data and factors that significantly influence homelessness. The latter part of our study focuses on analysis of media headline data related to ‘homeless’, i.e., text analysis of news titles scraped from news websites belonging to three different media categories - left wing, neutral, and right wing. We perform sentiment analysis (BERT), word frequency analysis, and topic modeling (LDA) to assess media depiction of homelessness by each political wing. We finally compare the analyses from both parts, numerical and text, to discern the relationship between media sentiments and the actual state of homelessness. 
 
-Our study is split into two parts. We first perform numerical analysis of data that consists of counts of homeless people across different demographics like age, gender, race, state, etc. We employ various algorithms like clustering, association pattern mining, and classification models like Random Forest and Gradient Boosting to understand underlying patterns in the data and factors that significantly influence homelessness.
 
-The latter part of our study focuses on analyzing media headline data related to "homeless," i.e., text analysis of news titles scraped from news websites belonging to three different media categories—left-wing, neutral, and right-wing. We perform sentiment analysis (BERT), word frequency analysis, and topic modeling (LDA) to assess media depiction of homelessness by each political wing. We finally compare the analyses from both parts, numerical and text, to discern the relationship between media sentiments and the actual state of homelessness.
 
 ---
 
 ## 4. Methodology  
-In our endeavor to comprehensively analyze the patterns of homelessness and their portrayal in the media, we've devised a multi-faceted approach. The methodology is segmented into specific tasks and grouped under distinct data categories for clarity and precision. Below is a detailed breakdown of our methods and analytical techniques:
+In our endeavor to comprehensively analyze the patterns of homelessness and their portrayal in the media, we've devised a multi-faceted approach. The possible methodology is segmented into specific tasks and grouped under distinct data categories for clarity and precision. The following provides a detailed breakdown of considering methods and analytical techniques:
+ 
+
 
 ### 4.1 Section 1: Numerical Analysis  
-- **Part 0. Data Preprocessing**  
+- **Part 0. Data Preprocessing**
+   ![image](https://github.com/user-attachments/assets/99e2a911-19ff-44e2-84ce-299b6d779961)
+
 - **Part 1. Correlation**  
   - Using a heatmap to analyze strong correlations among variables to find patterns.  
 - **Part 2. Clustering**  
