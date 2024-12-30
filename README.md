@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-</head>
-<body>
-
-
 # US Homelessness Patterns & Media Representation
 
 ## Understanding and Addressing U.S. Homelessness Through Data Science  
@@ -144,11 +134,12 @@ $$
 </div>
 
 Here:
-- \( x_i \) and \( y_i \) are the values of variables \( X \) and \( Y \),
-- \( \bar{x} \) and \( \bar{y} \) are their respective means,
-- \( n \) is the number of observations.
+- x_i and y_i are the values of variables X and Y,
+- x̄ and ȳ are their respective means,
+- n is the number of observations.
 
-A value close to \( 1 \) indicates a strong positive relationship, \( -1 \) indicates a strong negative relationship, and \( 0 \) means no correlation.
+A value close to 1 indicates a strong positive relationship, -1 indicates a strong negative relationship, and 0 means no correlation.
+
 
 ### Why It Matters
 In our study, correlation helped uncover meaningful patterns, such as the strong association between certain demographic groups (e.g., under-18 females) and sheltered homelessness.
@@ -163,9 +154,14 @@ Clustering is a method of grouping data points so that those in the same group a
 ### Key Techniques
 1. **The Elbow Method**:
    - Helps determine the optimal number of clusters by plotting the *Within-Cluster Sum of Squares (WCSS)* and identifying the "elbow point," where adding more clusters yields diminishing returns.
-   \[
-   \text{WCSS} = \sum_{k=1}^{K} \sum_{x \in C_k} ||x - \mu_k||^2
-   \]
+<div align="center">
+
+$$
+\text{WCSS} = \sum_{k=1}^{K} \sum_{x \in C_k} ||x - \mu_k||^2
+$$
+
+</div>
+
 
 2. **Hierarchical Clustering**:
    - Groups data points by successively merging the closest clusters, visualized through a dendrogram.
@@ -206,17 +202,30 @@ To predict high versus low levels of homelessness, we employed two powerful mach
 
 ### Random Forest
 This algorithm builds multiple decision trees and aggregates their predictions to improve accuracy and reduce overfitting. Its formula is:
-\[
+<div align="center">
+
+$$
 \hat{y} = \frac{1}{n} \sum_{i=1}^{n} f_i(x)
-\]
+$$
+
+</div>
+
 Where \( f_i(x) \) is the prediction from the \( i \)-th tree.
+
 
 ### Gradient Boosting
 Gradient Boosting builds models sequentially, optimizing the error at each step. It minimizes the loss function \( L \) using:
-\[
+
+<div align="center">
+
+$$
 F_m(x) = F_{m-1}(x) + h_m(x)
-\]
+$$
+
+</div>
+
 Where \( h_m(x) \) represents the corrective model.
+
 
 ### Insights Gained
 These algorithms highlighted critical predictors of high homelessness levels, such as "Gender - Male" and "Age - Over 18," corroborating patterns observed in the raw data.
@@ -229,12 +238,19 @@ Latent Dirichlet Allocation (LDA) is a natural language processing technique tha
 
 ### The Mathematics
 LDA models each document as a mixture of topics and each topic as a mixture of words:
-\[
+
+<div align="center">
+
+$$
 P(w | d) = \sum_{z} P(w | z)P(z | d)
-\]
+$$
+
+</div>
+
 Where:
 - \( P(w | z) \): Probability of word \( w \) given topic \( z \),
 - \( P(z | d) \): Probability of topic \( z \) given document \( d \).
+
 
 ### Why It’s Insightful
 By applying LDA, we uncovered themes like "pandemic-related impacts" and "policy discussions," shedding light on how media narratives evolved during key periods.
@@ -535,6 +551,3 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 3. Sentiment Analysis: Hugging Face BERT
 4. Gradient Boosting Explained: Towards Data Science.
 
-
-</body>
-</html>
