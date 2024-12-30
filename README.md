@@ -52,47 +52,24 @@ Our study has been split into two parts. We first perform numerical analysis of 
 
 ## 4. Methodology  
 In our endeavor to comprehensively analyze the patterns of homelessness and their portrayal in the media, we've devised a multi-faceted approach. The possible methodology is segmented into specific tasks and grouped under distinct data categories for clarity and precision. The following provides a detailed breakdown of considering methods and analytical techniques:
- 
-
 
 ### 4.1 Section 1: Numerical Analysis  
-- **Part 0. Data Preprocessing**
-   ![image](https://github.com/user-attachments/assets/99e2a911-19ff-44e2-84ce-299b6d779961)
-
-- **Part 1. Correlation**  
-  - Using a heatmap to analyze strong correlations among variables to find patterns.  
-- **Part 2. Clustering**  
-  - Perform clustering to understand which demographics tend to group together.  
-- **Part 3. Association Pattern Mining**  
-  - Use the FP Growth algorithm to uncover demographic associations.  
-- **Part 4. Classification Models**  
-  - Apply classification models to identify factors influencing high/low homelessness levels.  
+- **Step 1: Data Preprocessing** – Prepare data for analysis.
+  ![image](https://github.com/user-attachments/assets/99e2a911-19ff-44e2-84ce-299b6d779961)
+- **Step 2: Correlation Analysis** – Identify variable relationships using heatmaps.  
+- **Step 3: Clustering** – Group demographics to uncover behavioral patterns.  
+- **Step 4: Association Rule Mining** – Discover demographic associations with FP Growth.  
+- **Step 5: Classification Models** – Analyze factors influencing homelessness using models.
 
 ### 4.2 Section 2: Media Analysis  
-- **Part 1. Web Scraping for News Headlines (2016-2022):**  
-  - Scrape 100+ news article headlines per year using the keyword "homeless."  
-  - Target three outlets with distinct political leanings: The New York Times (left), The Wall Street Journal (center), and The Washington Examiner (right).  
-
-- **Part 2. Random Selection of Headlines:**  
-  - Randomly select 100 headlines per media outlet annually.  
-
-- **Part 3. Sentiment Analysis on Selected Headlines:**  
-  - Conduct sentiment analysis (BERT), topic modeling (LDA), and word frequency analysis.  
-
-- **Part 4. Analyze and Visualize Sentiment Analysis Data:**  
-  - Extract and normalize sentiment data for visualization.  
-
-- **Part 5. Annual Total Homeless Counts (2015-2022):**  
-  - Calculate and visualize annual homeless trends using datasets.  
-
-- **Part 6. Comparative Analysis of Media Sentiment:**  
-  - Create line plots to compare sentiment by media outlet.  
-
-- **Part 7. Detailed Sentiment Analysis by Media Outlet:**  
-  - Aggregate and visualize sentiment scores across political categories.  
-
-- **Part 8. Correlation Analysis Between Homelessness Data and Sentiment:**  
-  - Check statistical assumptions and quantify relationships using correlation coefficients.  
+- **Step 1: Web Scraping** – Collect 100+ annual headlines (2016–2022) from three politically diverse outlets.  
+- **Step 2: Headline Sampling** – Randomly select 100 headlines per outlet annually.  
+- **Step 3: Sentiment and Topic Analysis** – Perform sentiment analysis, topic modeling, and word frequency analysis.  
+- **Step 4: Sentiment Visualization** – Normalize and chart sentiment trends.  
+- **Step 5: Homelessness Trends** – Visualize annual homeless counts (2015–2022).  
+- **Step 6: Media Sentiment Comparison** – Compare sentiment trends across outlets.  
+- **Step 7: Sentiment by Political Leaning** – Aggregate and visualize sentiment by political category.  
+- **Step 8: Correlation Analysis** – Quantify relationships between sentiment and homelessness trends.  
 
 ---
 
@@ -592,7 +569,7 @@ In conclusion, our multifaceted analysis of homelessness, integrating numerical 
 
 ---
 
-## **9. References**
+# 9. References**
 1. HUD: Annual Homeless Assessment Reports
 2. FP Growth Algorithm: Wikipedia
 3. Sentiment Analysis: Hugging Face BERT
