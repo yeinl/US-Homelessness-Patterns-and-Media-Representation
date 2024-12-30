@@ -277,6 +277,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 #### (c) Variability Across Years
 <br> 
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/d5dc73d7-5b33-4f26-ab5d-f6f4e7e7260e" />
+<br> 
 - Side-by-side boxplots reveal consistent variability in homeless counts across years.
 - Homelessness has not shown significant improvement since 2015.
 
