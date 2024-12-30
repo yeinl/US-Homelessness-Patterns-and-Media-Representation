@@ -1,3 +1,7 @@
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+
+
 # US Homelessness Patterns & Media Representation
 
 ## Understanding and Addressing U.S. Homelessness Through Data Science  
@@ -575,3 +579,4 @@ In conclusion, our multifaceted analysis of homelessness, integrating numerical 
 3. Sentiment Analysis: Hugging Face BERT
 4. Gradient Boosting Explained: Towards Data Science.
 
+</div>
