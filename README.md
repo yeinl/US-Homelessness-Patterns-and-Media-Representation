@@ -611,7 +611,7 @@ In conclusion, our multifaceted analysis of homelessness, integrating numerical 
 
 ---
 
-# 9. References**
+# 9. References
 1. HUD: Annual Homeless Assessment Reports
 2. FP Growth Algorithm: Wikipedia
 3. Sentiment Analysis: Hugging Face BERT
