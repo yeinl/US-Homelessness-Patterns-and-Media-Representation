@@ -124,9 +124,15 @@ Correlation is a statistical measure that helps us understand the strength and d
 
 ### The Math Behind It
 The Pearson correlation coefficient \( r \) is calculated using the formula:
-\[
+
+<div align="center">
+
+$$
 r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
-\]
+$$
+
+</div>
+
 Here:
 - \( x_i \) and \( y_i \) are the values of variables \( X \) and \( Y \),
 - \( \bar{x} \) and \( \bar{y} \) are their respective means,
@@ -136,6 +142,7 @@ A value close to \( 1 \) indicates a strong positive relationship, \( -1 \) indi
 
 ### Why It Matters
 In our study, correlation helped uncover meaningful patterns, such as the strong association between certain demographic groups (e.g., under-18 females) and sheltered homelessness.
+
 
 ---
 
