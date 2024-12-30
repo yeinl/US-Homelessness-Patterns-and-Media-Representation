@@ -299,6 +299,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 #### (a) Part 1: Correlation Matrix
 <br> 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/fa559c69-df7b-4414-9807-90a580bce08e" />
+<br> 
 - Strong positive correlations (≥ 0.9) observed between the following variables:
   1. Under 18 and African American
   2. Under 18 and Female
