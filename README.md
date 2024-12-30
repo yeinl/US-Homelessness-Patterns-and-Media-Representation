@@ -261,11 +261,6 @@ The dataset utilized in this research project was acquired from the U.S. Departm
    ![image](https://github.com/user-attachments/assets/2ddded21-fc35-4bfc-a7c3-e22dcf6168c8)
    ![image](https://github.com/user-attachments/assets/f4125c23-354a-440f-a7ac-0a1abaf899ee)
   
-- **Log-Transformed Data Examples:**  
-   ![Histogram Example](https://github.com/user-attachments/assets/2ddded21-fc35-4bfc-a7c3-e22dcf6168c8)  
-   ![Boxplot Example](https://github.com/user-attachments/assets/f4125c23-354a-440f-a7ac-0a1abaf899ee)  
-   - Log transformation normalized the data for better distribution visualization.  
-
 
 #### (c) Variability Across Years
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/d5dc73d7-5b33-4f26-ab5d-f6f4e7e7260e" />
