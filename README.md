@@ -8,39 +8,52 @@
 ## 📑 **Table of Contents**
 1. [Introduction](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#1-introduction)
 2. [Problem Statement](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#2-problem-statement)
-3. [Key Concepts](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#3-key-concepts)
-    - [What is Sentiment Analysis?](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#what-is-sentiment-analysis)
-    - [Why Clustering Matters](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#why-clustering-matters)
-    - [Understanding Association Pattern Mining](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#understanding-association-pattern-mining)
-4. [Data Overview](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#4-data-overview)
-5. [Methodology](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#5-methodology)
-    - [Numerical Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#numerical-analysis)
-    - [Media Sentiment Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#media-sentiment-analysis)
-6. [Key Findings](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#6-key-findings)
-7. [Visualizations](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#7-visualizations)
-8. [Technical Walkthrough](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#8-technical-walkthrough)
+3. [Related Work](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#3-related-work)
+4. [Methodology](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#4-methodology)
+    - [Numerical Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#41-numerical-analysis)
+    - [Media Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#42-media-analysis)
+5. [Key Concepts and Background](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#5-key-concepts-and-background)
+    - [Correlation Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#51-correlation-analysis)
+    - [Clustering](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#52-clustering)
+    - [FP-Growth](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#53-fp-growth)
+    - [Sentiment Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#54-sentiment-analysis)
+    - [Machine Learning Models](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#55-random-forest-and-gradient-boosting)
+    - [Topic Modeling with LDA](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#56-topic-modeling-with-lda)
+6. [Experiment](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#6-experiment)
+    - [Numerical Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#61-numerical-analysis)
+        - [Data Acquisition](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#611-data-acquisition)
+        - [Data Visualization](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#612-data-visualization)
+        - [Numerical Methods](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#613-numerical-analysis)
+    - [Media Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#62-media-analysis)
+        - [Dataset Preparation](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#621-dataset-preparation)
+        - [Sentiment Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#622-sentiment-analysis)
+        - [Word Frequency and Topic Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#623-topic-analysis)
+        - [Comparative Analysis](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#624-comparative-analysis)
+7. [Key Findings](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#7-key-findings)
+8. [Visualizations](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#8-visualizations)
 9. [Conclusion](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#9-conclusion)
 10. [Future Work](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#10-future-work)
 11. [Repository Structure](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#11-repository-structure)
 12. [References](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#12-references)
+13. [Appendix](https://github.com/yeinl/US-Homelessness-Patterns-and-Media-Representation/blob/main/README.md#13-appendix)
 
 ## 1. Introduction  
 The true strength of a society often shows in how it treats its most vulnerable members. Homelessness is a telling challenge in this regard, reflecting not just the availability of shelter but broader issues like economic health and community support. Between 2007 and 2022, the story of homelessness in the U.S. has varied greatly, and not all these stories make it to the headlines.
-
+ 
 This research is set against the backdrop of notable shifts in homelessness demographics. We're exploring how factors like age, gender, race, and geographical location influence patterns of homelessness. The landscape is vast: from young adults facing homelessness to elderly individuals navigating unique challenges. Notably, while some areas have successfully curtailed the rise of homelessness with innovative strategies, others find themselves battling unexpected surges. We additionally aim to spotlight regions that have excelled in their approach, serving as potential models for others.
-
-An equally important facet of our study is the media's portrayal of homelessness. Through quantitative and qualitative analysis, we'll assess the themes present in online news articles segmented by state. By comparing these media depictions, analyzing their sentiments against actual homelessness statistics, we aim to discern any disparities, offering a deeper understanding of potential media biases or misrepresentations.
-
-To uncover these insights, we're turning to data mining—employing techniques that delve deep into large datasets to uncover patterns and trends. While we will dive deeper into our methods later, it's worth noting that our approach is comprehensive, merging hard data with narrative analysis. This ensures a holistic understanding, shedding light on both statistics and stories.
-
+ 
+An equally important facet of our study is the media's portrayal of homelessness. Through quantitative and qualitative analysis, we'll assess the themes present in online news articles segmented by state. By comparing these media depictions by analyzing their sentiments, against actual homelessness statistics, we aim to discern any disparities, offering a deeper understanding of potential media biases or misrepresentations.
+ 
+To uncover these insights, we're turning to data mining—we employ techniques that delve deep into large datasets to uncover patterns and trends. While we will dive deeper into our methods later, it's worth noting that our approach is comprehensive, merging hard data with narrative analysis. This ensures a holistic understanding, shedding light on both statistics and stories.
+ 
 In essence, "Bridging Realities" is not merely a research endeavor. It seeks to empower policymakers, NGOs, urban planners, and social welfare experts with a nuanced understanding of homelessness. By challenging prevailing narratives and offering a clearer picture, we hope to inspire a renewed commitment to addressing and understanding this pressing issue.
+
 
 ---
 
 ## 2. Problem Statement  
-We aim to investigate changing patterns related to homelessness from 2015 to 2022 by conducting a thorough numerical analysis of homeless counts across diverse demographics such as age, gender, race, and state. Utilizing clustering, association pattern mining, and classification models (Random Forest, Gradient Boosting), we seek to identify underlying patterns and factors significantly influencing homelessness.
+We aim to investigate changing patterns related to homelessness from 2015 to 2022 by conducting a thorough numerical analysis of homeless counts across diverse demographics such as age, gender, race, and state. Utilizing clustering, association pattern mining, and classification models (Random Forest, Gradient Boosting), we seek to identify underlying patterns and factors significantly influencing homelessness. Additionally, our study involves a text analysis of news titles related to homelessness from left-wing, neutral, and right-wing media categories. Employing sentiment analysis (BERT), word frequency, and topic modeling (LDA), we aim to assess media portrayals of homelessness across political wings. Furthermore, we seek to assess the alignment between Internet news portrayals by state and the actual circumstances of homelessness.![image](https://github.com/user-attachments/assets/a9cf8e3d-9fd8-4aa7-bb50-9caf5212e23e)
 
-Additionally, our study involves a text analysis of news titles related to homelessness from left-wing, neutral, and right-wing media categories. Employing sentiment analysis (BERT), word frequency, and topic modeling (LDA), we aim to assess media portrayals of homelessness across political wings. Furthermore, we seek to assess the alignment between Internet news portrayals by state and the actual circumstances of homelessness.
 
 ---
 
@@ -97,19 +110,130 @@ In our endeavor to comprehensively analyze the patterns of homelessness and thei
 
 ---
 
+# 5. Key Concepts and Background
+
+To provide readers with a clear understanding of the technical foundation behind our analysis, this section introduces key concepts, theories, and methodologies from statistics, data mining, and data science. These are the building blocks that drive our investigation, from discovering patterns in homelessness data to interpreting media narratives.
+
 ---
-# 5. Experiment
 
-## 5.1 Section 1: Numerical Analysis
+## 5.1. Correlation Analysis: Quantifying Relationships
 
-### 5.1.1 Data Acquisition - Homeless Count Data
+Correlation is a statistical measure that helps us understand the strength and direction of the linear relationship between two variables. In our project, correlation analysis played a pivotal role in identifying how demographic factors like age, gender, and race relate to homelessness counts.
+
+### The Math Behind It
+The Pearson correlation coefficient \( r \) is calculated using the formula:
+\[
+r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
+\]
+Here:
+- \( x_i \) and \( y_i \) are the values of variables \( X \) and \( Y \),
+- \( \bar{x} \) and \( \bar{y} \) are their respective means,
+- \( n \) is the number of observations.
+
+A value close to \( 1 \) indicates a strong positive relationship, \( -1 \) indicates a strong negative relationship, and \( 0 \) means no correlation.
+
+### Why It Matters
+In our study, correlation helped uncover meaningful patterns, such as the strong association between certain demographic groups (e.g., under-18 females) and sheltered homelessness.
+
+---
+
+## 5.2. Clustering: Unveiling Hidden Groups
+
+Clustering is a method of grouping data points so that those in the same group are more similar to each other than to those in other groups. By applying clustering to our homelessness data, we identified demographic segments with shared characteristics, helping us pinpoint areas requiring focused intervention.
+
+### Key Techniques
+1. **The Elbow Method**:
+   - Helps determine the optimal number of clusters by plotting the *Within-Cluster Sum of Squares (WCSS)* and identifying the "elbow point," where adding more clusters yields diminishing returns.
+   \[
+   \text{WCSS} = \sum_{k=1}^{K} \sum_{x \in C_k} ||x - \mu_k||^2
+   \]
+
+2. **Hierarchical Clustering**:
+   - Groups data points by successively merging the closest clusters, visualized through a dendrogram.
+
+### Application in Our Study
+Clustering revealed key demographic clusters, such as a distinct group predominantly composed of young, African American individuals. This insight highlighted systemic factors disproportionately affecting certain populations.
+
+---
+
+## 5.3. FP-Growth: Mining Frequent Patterns
+
+The FP-Growth algorithm efficiently identifies frequent itemsets within large datasets, making it invaluable for discovering demographic patterns in our homelessness data.
+
+### How It Works
+1. Constructs an FP-Tree (Frequent Pattern Tree) to represent itemsets compactly.
+2. Traverses the tree to extract frequent itemsets without generating candidate sets.
+
+### What We Learned
+Using FP-Growth, we identified patterns like the high co-occurrence of "Under 18" and "Sheltered" homelessness among certain racial groups. This guided further analysis into systemic issues and resource allocation.
+
+---
+
+## 5.4. Sentiment Analysis: Decoding Media Tone
+
+Sentiment analysis evaluates the emotional tone of text, categorizing it as positive, negative, or neutral. In our project, we used BERT (Bidirectional Encoder Representations from Transformers) to analyze thousands of media headlines and uncover trends in sentiment over time.
+
+### Behind the Scenes
+BERT processes each word in the context of the entire sentence, capturing nuances in meaning. The sentiment score is derived using a classification head attached to the model's final layer.
+
+### Why It’s Important
+Our analysis revealed that headlines often leaned "Very Negative" during periods of increasing homelessness, reflecting critical media coverage during societal crises like the pandemic.
+
+---
+
+## 5.5. Random Forest and Gradient Boosting: Predictive Powerhouses
+
+To predict high versus low levels of homelessness, we employed two powerful machine learning algorithms: Random Forest and Gradient Boosting.
+
+### Random Forest
+This algorithm builds multiple decision trees and aggregates their predictions to improve accuracy and reduce overfitting. Its formula is:
+\[
+\hat{y} = \frac{1}{n} \sum_{i=1}^{n} f_i(x)
+\]
+Where \( f_i(x) \) is the prediction from the \( i \)-th tree.
+
+### Gradient Boosting
+Gradient Boosting builds models sequentially, optimizing the error at each step. It minimizes the loss function \( L \) using:
+\[
+F_m(x) = F_{m-1}(x) + h_m(x)
+\]
+Where \( h_m(x) \) represents the corrective model.
+
+### Insights Gained
+These algorithms highlighted critical predictors of high homelessness levels, such as "Gender - Male" and "Age - Over 18," corroborating patterns observed in the raw data.
+
+---
+
+## 5.6. Topic Modeling with LDA: Uncovering Themes
+
+Latent Dirichlet Allocation (LDA) is a natural language processing technique that discovers underlying topics in text. In our media analysis, LDA helped us identify recurring themes in homelessness coverage.
+
+### The Mathematics
+LDA models each document as a mixture of topics and each topic as a mixture of words:
+\[
+P(w | d) = \sum_{z} P(w | z)P(z | d)
+\]
+Where:
+- \( P(w | z) \): Probability of word \( w \) given topic \( z \),
+- \( P(z | d) \): Probability of topic \( z \) given document \( d \).
+
+### Why It’s Insightful
+By applying LDA, we uncovered themes like "pandemic-related impacts" and "policy discussions," shedding light on how media narratives evolved during key periods.
+
+
+---
+# 6. Experiment
+
+## 6.1 Section 1: Numerical Analysis
+
+### 6.1.1 Data Acquisition - Homeless Count Data
 The dataset utilized in this research project was acquired from the U.S. Department of Housing and Urban Development (HUD). The dataset comprises Point-In-Time (PIT) counts collected by Continuums of Care (CoCs) from 2007 to 2022. 
 
 > *"PIT counts are unduplicated one-night estimates of homeless populations, encompassing both sheltered and unsheltered individuals. These counts are conducted annually nationwide during the final week of January. CoCs represent local planning bodies responsible for coordinating a comprehensive range of homelessness services within specific geographic areas, which can encompass cities, counties, metropolitan areas, or entire states"* [3].
 
 ---
 
-### 5.1.2 Data Visualization
+### 6.1.2 Data Visualization
 
 #### (a) Trend
 1. **Trend of Overall Count**
@@ -149,7 +273,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ---
 
-### 5.1.3 Numerical Analysis
+### 6.1.3 Numerical Analysis
 
 #### (a) Part 1: Correlation Matrix
 - Strong positive correlations (≥ 0.9) observed between the following variables:
@@ -347,7 +471,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ---
 
-# 5.3. Comparison of Results from Numerical and Media Analysis
+# 6.3. Comparison of Results from Numerical and Media Analysis
 
 - Media negativity mirrors numerical increases in homelessness (2018–2020).  
 - Media coverage of California aligns with numerical findings of high homeless counts.  
@@ -355,7 +479,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ---
 
-# 6. Conclusion of Analysis
+# 7. Conclusion of Analysis
 
 ### **Key Takeaways:**
 - Numerical analysis reveals persistent demographic disparities in homelessness.
@@ -368,14 +492,15 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ---
 
-# 7. Bibliography
+# 8. Bibliography
 1. A. Kube, *Data-driven decision-making: Using counterfactual predictions to allocate scarce homeless services fairly and efficiently*. Ph.D. dissertation, Washington University in St. Louis, 2022. [Online]. Available: [ProQuest](https://www.proquest.com/docview/2659594394)  
 2. A. Rahmattalabi, *Towards Trustworthy and Data-Driven Social Interventions*. Ph.D. dissertation, Dept. Computer Science, University of Southern California, 2022. [Online]. Available: [Harvard Projects](https://projects.iq.harvard.edu/files/teamcore/files/thesis_aidarahmattalabi.pdf)  
 3. U.S. Department of Housing and Urban Development, *The 2022 Annual Homeless Assessment Report to Congress - Part 1: Point-in-Time Estimates of Homelessness*. [Online]. Available: [HUD User](https://www.huduser.gov/portal/sites/default/files/pdf/2022-ahar-part-1.pdf)  
 
 ---
 
-# 8. Appendix
+# 9. Appendix 
+(Note: paste images here)
 - **Appendix A:** Distribution Analysis Plots  
 - **Appendix B:** Variability Analysis Plots  
 - **Appendix C:** Word Frequency and Topic Analysis Plots  
@@ -385,7 +510,7 @@ The dataset utilized in this research project was acquired from the U.S. Departm
 
 ---
 
-## **9. References**
+## **10. References**
 1. HUD: Annual Homeless Assessment Reports
 2. FP Growth Algorithm: Wikipedia
 3. Sentiment Analysis: Hugging Face BERT
