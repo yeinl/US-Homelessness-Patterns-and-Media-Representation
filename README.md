@@ -1,6 +1,14 @@
 
 <div style="display: flex; flex-direction: column; align-items: center;">
 
+<style>
+  img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+</style>
+
+
 
 # US Homelessness Patterns & Media Representation
 
